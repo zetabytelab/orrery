@@ -1,1 +1,42 @@
-
+{
+    "query": "synthetic customer profiles crm demographics",
+    "candidates": [
+        {
+            "ref": "kaggle:aslawant/credit-card-customer-demographics-dataset",
+            "title": "Credit Card Customer Demographics Dataset",
+            "source": "kaggle",
+            "pricing": "free",
+            "quality": 69,
+            "url": "https://www.kaggle.com/datasets/aslawant/credit-card-customer-demographics-dataset",
+            "summary": "Synthetic customer demographics and credit card data for analytics"
+        },
+        {
+            "ref": "kaggle:dharmendrapandit12/credit-card-customer-behavior-segmentation-dataset",
+            "title": "Credit Card Customer Behavior Segmentation Dataset",
+            "source": "kaggle",
+            "pricing": "free",
+            "quality": 69,
+            "url": "https://www.kaggle.com/datasets/dharmendrapandit12/credit-card-customer-behavior-segmentation-dataset",
+            "summary": "The dataset simulates real-world customer profiles, spending behavior"
+        },
+        {
+            "ref": "snowflake:GZSUZ8IO7H",
+            "title": "Consumer Demographics for Data Enhancement (AUS)",
+            "source": "snowflake",
+            "pricing": "contact",
+            "quality": 60,
+            "url": "https://app.snowflake.com/marketplace/listing/GZSUZ8IO7H",
+            "summary": "Australian Census data, updated and modelled to create an Ideal demographic profile for data enhancement."
+        },
+        {
+            "ref": "figshare:32971823",
+            "title": "Data Sheet 1_Evaluating AI-assisted customer verification for synthetic nucleic acid screening.pdf",
+            "source": "figshare",
+            "pricing": "free",
+            "quality": 20,
+            "url": "https://frontiersin.figshare.com/articles/dataset/Data_Sheet_1_Evaluating_AI-assisted_customer_verification_for_synthetic_nucleic_acid_screening_pdf/32971823",
+            "summary": "Data Sheet 1_Evaluating AI-assisted customer verification for synthetic nucleic acid screening.pdf dataset on Figshare; free."
+        }
+    ],
+    "origin": "mundaneum-live"
+}
