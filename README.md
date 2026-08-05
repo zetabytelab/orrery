@@ -87,6 +87,10 @@ Environment variables:
 - **Propagation**: selecting a dataset or column computes the transitive downstream closure over the DataHub lineage edges and animates the blast radius; ML models and dashboards display an "upstream quality incident" badge whenever any transitive upstream has an issue.
 - **Write-back** (`app/api/writeback/route.ts`): an allowlisted plan of MCP mutation calls (a deterministic run-marked profile note plus a severity tag), previewed in the UI before sending; dry-run when no DataHub is configured.
 
+## From demo to your estate
+
+Nothing in the pipeline is demo-specific. The canvas renders whatever `/api/context` returns (any DataHub instance via MCP), and the profiler runs on whatever CSVs sit in `public/estate/` — drop in exports of your own tables with matching names and the same contract checks, propagation, and write-back apply. The natural production path is connector-based (profile directly from the warehouse via DuckDB's Parquet/HTTP readers instead of bundled CSVs); that is roadmap, not fiction — the profiling SQL is already engine-agnostic.
+
 ## Repository map
 
 ```
