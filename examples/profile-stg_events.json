@@ -1,0 +1,273 @@
+{
+  "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_events,PROD)",
+  "rows": 9000,
+  "columns": [
+    {
+      "field": "event_id",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 9000,
+      "min": "E0000001",
+      "max": "E0009000",
+      "issues": [],
+      "topk": [
+        {
+          "label": "E0000001",
+          "count": 1
+        },
+        {
+          "label": "E0000002",
+          "count": 1
+        },
+        {
+          "label": "E0000003",
+          "count": 1
+        },
+        {
+          "label": "E0000004",
+          "count": 1
+        },
+        {
+          "label": "E0000005",
+          "count": 1
+        },
+        {
+          "label": "E0000006",
+          "count": 1
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 0,
+        "other": 100
+      }
+    },
+    {
+      "field": "customer_id",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 1183,
+      "min": "C00001",
+      "max": "C01200",
+      "issues": [],
+      "topk": [
+        {
+          "label": "C00147",
+          "count": 23
+        },
+        {
+          "label": "C00029",
+          "count": 21
+        },
+        {
+          "label": "C00477",
+          "count": 20
+        },
+        {
+          "label": "C00580",
+          "count": 20
+        },
+        {
+          "label": "C00494",
+          "count": 20
+        },
+        {
+          "label": "C00560",
+          "count": 19
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 0,
+        "other": 100
+      }
+    },
+    {
+      "field": "event_type",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 5,
+      "min": "add_to_cart",
+      "max": "support_ticket",
+      "issues": [],
+      "topk": [
+        {
+          "label": "page_view",
+          "count": 1853
+        },
+        {
+          "label": "support_ticket",
+          "count": 1840
+        },
+        {
+          "label": "add_to_cart",
+          "count": 1784
+        },
+        {
+          "label": "checkout",
+          "count": 1779
+        },
+        {
+          "label": "refund_request",
+          "count": 1744
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 0,
+        "other": 100
+      }
+    },
+    {
+      "field": "event_ts",
+      "declaredType": "timestamp",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 5854,
+      "min": "1782867713000",
+      "max": "2026-07-31T23:33:36Z",
+      "issues": [
+        {
+          "kind": "type-drift",
+          "severity": "critical",
+          "message": "Declared timestamp in DataHub, but 9.3% of values are epoch-style numerics — mixed formats broke type inference (observed VARCHAR)."
+        }
+      ],
+      "topk": [
+        {
+          "label": "2026-07-23T02:49:34Z",
+          "count": 4
+        },
+        {
+          "label": "2026-07-17T10:09:01Z",
+          "count": 4
+        },
+        {
+          "label": "2026-07-01T12:23:13Z",
+          "count": 3
+        },
+        {
+          "label": "2026-07-13T18:33:21Z",
+          "count": 3
+        },
+        {
+          "label": "2026-07-07T03:44:12Z",
+          "count": 2
+        },
+        {
+          "label": "2026-07-19T16:41:14Z",
+          "count": 2
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 90.65555555555555,
+        "numeric": 9.344444444444445,
+        "empty": 0,
+        "other": 0
+      }
+    },
+    {
+      "field": "session_minutes",
+      "declaredType": "double",
+      "observedType": "DOUBLE",
+      "missingPct": 0,
+      "distinct": 421,
+      "min": "0",
+      "max": "42",
+      "issues": [],
+      "histogram": [
+        {
+          "label": "bin 0",
+          "count": 764
+        },
+        {
+          "label": "bin 1",
+          "count": 763
+        },
+        {
+          "label": "bin 2",
+          "count": 765
+        },
+        {
+          "label": "bin 3",
+          "count": 753
+        },
+        {
+          "label": "bin 4",
+          "count": 754
+        },
+        {
+          "label": "bin 5",
+          "count": 761
+        },
+        {
+          "label": "bin 6",
+          "count": 667
+        },
+        {
+          "label": "bin 7",
+          "count": 749
+        },
+        {
+          "label": "bin 8",
+          "count": 781
+        },
+        {
+          "label": "bin 9",
+          "count": 743
+        },
+        {
+          "label": "bin 10",
+          "count": 726
+        },
+        {
+          "label": "bin 11",
+          "count": 774
+        }
+      ]
+    },
+    {
+      "field": "device",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 4,
+      "min": "android",
+      "max": "tablet",
+      "issues": [],
+      "topk": [
+        {
+          "label": "ios",
+          "count": 2335
+        },
+        {
+          "label": "android",
+          "count": 2319
+        },
+        {
+          "label": "tablet",
+          "count": 2181
+        },
+        {
+          "label": "desktop",
+          "count": 2165
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 0,
+        "other": 100
+      }
+    }
+  ],
+  "health": 65,
+  "worst": "critical",
+  "profiledAt": "2026-08-05T21:16:40.076Z"
+}

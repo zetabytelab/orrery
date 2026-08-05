@@ -1,0 +1,4 @@
+{
+  "urn:li:mlModel:(urn:li:dataPlatform:mlflow,orrery.churn_model,PROD)": "critical",
+  "urn:li:dashboard:(looker,orrery.exec_revenue_dashboard)": "critical"
+}

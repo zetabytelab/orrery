@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Dark observatory theme — the validated dark-mode palette instance.
+   Status colors are reserved for data-health state and always ship with icon + label. */
+:root {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-raised: #222220;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --ink-3: #898781;
+  --grid: #2c2c2a;
+  --baseline: #383835;
+  --border: rgba(255, 255, 255, 0.1);
+  --series: #3987e5;
+  --series-soft: #1c5cab;
+  --seq-250: #86b6ef;
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--page);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.starfield {
+  background:
+    radial-gradient(1px 1px at 12% 28%, rgba(255, 255, 255, 0.28) 0, transparent 100%),
+    radial-gradient(1px 1px at 38% 74%, rgba(255, 255, 255, 0.18) 0, transparent 100%),
+    radial-gradient(1.5px 1.5px at 61% 18%, rgba(255, 255, 255, 0.22) 0, transparent 100%),
+    radial-gradient(1px 1px at 83% 55%, rgba(255, 255, 255, 0.16) 0, transparent 100%),
+    radial-gradient(1px 1px at 26% 91%, rgba(255, 255, 255, 0.2) 0, transparent 100%),
+    radial-gradient(1.5px 1.5px at 71% 87%, rgba(255, 255, 255, 0.14) 0, transparent 100%),
+    radial-gradient(ellipse 60% 45% at 50% 0%, rgba(57, 135, 229, 0.06) 0, transparent 70%),
+    var(--page);
+}
+
+.react-flow__attribution {
+  background: transparent !important;
+  color: var(--ink-3) !important;
+}
+
+.react-flow__edge-path {
+  stroke: var(--baseline);
+  stroke-width: 1.5;
+}
+
+.react-flow__edge.edge-propagating .react-flow__edge-path {
+  stroke: var(--status-warning);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px rgba(250, 178, 25, 0.45));
+}
+
+.react-flow__edge.edge-dimmed .react-flow__edge-path {
+  opacity: 0.18;
+}
+
+.node-dimmed {
+  opacity: 0.22;
+  transition: opacity 200ms ease;
+}
+
+.card-glow-critical {
+  box-shadow: 0 0 0 1px rgba(208, 59, 59, 0.6), 0 0 26px rgba(208, 59, 59, 0.22);
+}
+.card-glow-serious {
+  box-shadow: 0 0 0 1px rgba(236, 131, 90, 0.55), 0 0 22px rgba(236, 131, 90, 0.18);
+}
+.card-glow-warning {
+  box-shadow: 0 0 0 1px rgba(250, 178, 25, 0.4), 0 0 18px rgba(250, 178, 25, 0.12);
+}
+.card-glow-good {
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+@keyframes pulse-beam {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.react-flow__edge.edge-propagating .react-flow__edge-path {
+  stroke-dasharray: 8 4;
+  animation: pulse-beam 700ms linear infinite;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

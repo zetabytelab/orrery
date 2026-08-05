@@ -1,0 +1,1515 @@
+{
+  "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
+  "rows": 1200,
+  "columns": [
+    {
+      "field": "customer_id",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 1200,
+      "min": "C00001",
+      "max": "C01200",
+      "issues": [],
+      "topk": [
+        {
+          "label": "C00001",
+          "count": 1
+        },
+        {
+          "label": "C00002",
+          "count": 1
+        },
+        {
+          "label": "C00003",
+          "count": 1
+        },
+        {
+          "label": "C00004",
+          "count": 1
+        },
+        {
+          "label": "C00005",
+          "count": 1
+        },
+        {
+          "label": "C00006",
+          "count": 1
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 0,
+        "other": 100
+      }
+    },
+    {
+      "field": "signup_date",
+      "declaredType": "date",
+      "observedType": "DATE",
+      "missingPct": 0,
+      "distinct": 327,
+      "min": "1735689600000",
+      "max": "1766880000000",
+      "issues": [],
+      "histogram": [
+        {
+          "label": "01-01",
+          "count": 5
+        },
+        {
+          "label": "01-02",
+          "count": 5
+        },
+        {
+          "label": "01-04",
+          "count": 7
+        },
+        {
+          "label": "01-05",
+          "count": 2
+        },
+        {
+          "label": "01-06",
+          "count": 3
+        },
+        {
+          "label": "01-07",
+          "count": 1
+        },
+        {
+          "label": "01-08",
+          "count": 4
+        },
+        {
+          "label": "01-09",
+          "count": 5
+        },
+        {
+          "label": "01-10",
+          "count": 2
+        },
+        {
+          "label": "01-11",
+          "count": 4
+        },
+        {
+          "label": "01-12",
+          "count": 5
+        },
+        {
+          "label": "01-13",
+          "count": 5
+        },
+        {
+          "label": "01-14",
+          "count": 3
+        },
+        {
+          "label": "01-15",
+          "count": 8
+        },
+        {
+          "label": "01-16",
+          "count": 2
+        },
+        {
+          "label": "01-17",
+          "count": 1
+        },
+        {
+          "label": "01-18",
+          "count": 7
+        },
+        {
+          "label": "01-19",
+          "count": 2
+        },
+        {
+          "label": "01-20",
+          "count": 2
+        },
+        {
+          "label": "01-21",
+          "count": 3
+        },
+        {
+          "label": "01-22",
+          "count": 7
+        },
+        {
+          "label": "01-23",
+          "count": 4
+        },
+        {
+          "label": "01-24",
+          "count": 4
+        },
+        {
+          "label": "01-25",
+          "count": 5
+        },
+        {
+          "label": "01-26",
+          "count": 1
+        },
+        {
+          "label": "01-27",
+          "count": 1
+        },
+        {
+          "label": "01-28",
+          "count": 3
+        },
+        {
+          "label": "02-01",
+          "count": 5
+        },
+        {
+          "label": "02-02",
+          "count": 3
+        },
+        {
+          "label": "02-03",
+          "count": 3
+        },
+        {
+          "label": "02-04",
+          "count": 2
+        },
+        {
+          "label": "02-05",
+          "count": 3
+        },
+        {
+          "label": "02-06",
+          "count": 1
+        },
+        {
+          "label": "02-07",
+          "count": 10
+        },
+        {
+          "label": "02-08",
+          "count": 2
+        },
+        {
+          "label": "02-09",
+          "count": 3
+        },
+        {
+          "label": "02-10",
+          "count": 2
+        },
+        {
+          "label": "02-11",
+          "count": 5
+        },
+        {
+          "label": "02-12",
+          "count": 2
+        },
+        {
+          "label": "02-13",
+          "count": 3
+        },
+        {
+          "label": "02-14",
+          "count": 9
+        },
+        {
+          "label": "02-15",
+          "count": 5
+        },
+        {
+          "label": "02-16",
+          "count": 7
+        },
+        {
+          "label": "02-17",
+          "count": 3
+        },
+        {
+          "label": "02-18",
+          "count": 2
+        },
+        {
+          "label": "02-19",
+          "count": 7
+        },
+        {
+          "label": "02-20",
+          "count": 3
+        },
+        {
+          "label": "02-21",
+          "count": 4
+        },
+        {
+          "label": "02-22",
+          "count": 4
+        },
+        {
+          "label": "02-23",
+          "count": 3
+        },
+        {
+          "label": "02-24",
+          "count": 3
+        },
+        {
+          "label": "02-25",
+          "count": 4
+        },
+        {
+          "label": "02-26",
+          "count": 6
+        },
+        {
+          "label": "02-27",
+          "count": 2
+        },
+        {
+          "label": "02-28",
+          "count": 6
+        },
+        {
+          "label": "03-01",
+          "count": 2
+        },
+        {
+          "label": "03-02",
+          "count": 6
+        },
+        {
+          "label": "03-03",
+          "count": 5
+        },
+        {
+          "label": "03-04",
+          "count": 5
+        },
+        {
+          "label": "03-05",
+          "count": 6
+        },
+        {
+          "label": "03-06",
+          "count": 4
+        },
+        {
+          "label": "03-07",
+          "count": 2
+        },
+        {
+          "label": "03-08",
+          "count": 1
+        },
+        {
+          "label": "03-09",
+          "count": 2
+        },
+        {
+          "label": "03-10",
+          "count": 4
+        },
+        {
+          "label": "03-11",
+          "count": 3
+        },
+        {
+          "label": "03-12",
+          "count": 5
+        },
+        {
+          "label": "03-13",
+          "count": 5
+        },
+        {
+          "label": "03-14",
+          "count": 3
+        },
+        {
+          "label": "03-15",
+          "count": 2
+        },
+        {
+          "label": "03-16",
+          "count": 2
+        },
+        {
+          "label": "03-17",
+          "count": 5
+        },
+        {
+          "label": "03-18",
+          "count": 2
+        },
+        {
+          "label": "03-19",
+          "count": 4
+        },
+        {
+          "label": "03-20",
+          "count": 3
+        },
+        {
+          "label": "03-21",
+          "count": 1
+        },
+        {
+          "label": "03-22",
+          "count": 2
+        },
+        {
+          "label": "03-23",
+          "count": 3
+        },
+        {
+          "label": "03-24",
+          "count": 5
+        },
+        {
+          "label": "03-26",
+          "count": 2
+        },
+        {
+          "label": "03-27",
+          "count": 2
+        },
+        {
+          "label": "03-28",
+          "count": 1
+        },
+        {
+          "label": "04-01",
+          "count": 6
+        },
+        {
+          "label": "04-02",
+          "count": 1
+        },
+        {
+          "label": "04-03",
+          "count": 5
+        },
+        {
+          "label": "04-04",
+          "count": 3
+        },
+        {
+          "label": "04-05",
+          "count": 3
+        },
+        {
+          "label": "04-06",
+          "count": 3
+        },
+        {
+          "label": "04-07",
+          "count": 3
+        },
+        {
+          "label": "04-08",
+          "count": 3
+        },
+        {
+          "label": "04-09",
+          "count": 2
+        },
+        {
+          "label": "04-10",
+          "count": 3
+        },
+        {
+          "label": "04-11",
+          "count": 3
+        },
+        {
+          "label": "04-12",
+          "count": 3
+        },
+        {
+          "label": "04-13",
+          "count": 3
+        },
+        {
+          "label": "04-14",
+          "count": 2
+        },
+        {
+          "label": "04-16",
+          "count": 5
+        },
+        {
+          "label": "04-17",
+          "count": 5
+        },
+        {
+          "label": "04-18",
+          "count": 3
+        },
+        {
+          "label": "04-19",
+          "count": 4
+        },
+        {
+          "label": "04-20",
+          "count": 3
+        },
+        {
+          "label": "04-21",
+          "count": 3
+        },
+        {
+          "label": "04-22",
+          "count": 1
+        },
+        {
+          "label": "04-23",
+          "count": 3
+        },
+        {
+          "label": "04-24",
+          "count": 8
+        },
+        {
+          "label": "04-25",
+          "count": 9
+        },
+        {
+          "label": "04-26",
+          "count": 4
+        },
+        {
+          "label": "04-27",
+          "count": 2
+        },
+        {
+          "label": "04-28",
+          "count": 3
+        },
+        {
+          "label": "05-01",
+          "count": 1
+        },
+        {
+          "label": "05-02",
+          "count": 2
+        },
+        {
+          "label": "05-03",
+          "count": 6
+        },
+        {
+          "label": "05-04",
+          "count": 3
+        },
+        {
+          "label": "05-05",
+          "count": 4
+        },
+        {
+          "label": "05-06",
+          "count": 3
+        },
+        {
+          "label": "05-07",
+          "count": 4
+        },
+        {
+          "label": "05-08",
+          "count": 3
+        },
+        {
+          "label": "05-09",
+          "count": 4
+        },
+        {
+          "label": "05-10",
+          "count": 4
+        },
+        {
+          "label": "05-11",
+          "count": 7
+        },
+        {
+          "label": "05-12",
+          "count": 3
+        },
+        {
+          "label": "05-13",
+          "count": 2
+        },
+        {
+          "label": "05-14",
+          "count": 2
+        },
+        {
+          "label": "05-15",
+          "count": 6
+        },
+        {
+          "label": "05-17",
+          "count": 1
+        },
+        {
+          "label": "05-18",
+          "count": 5
+        },
+        {
+          "label": "05-19",
+          "count": 3
+        },
+        {
+          "label": "05-21",
+          "count": 6
+        },
+        {
+          "label": "05-22",
+          "count": 3
+        },
+        {
+          "label": "05-23",
+          "count": 1
+        },
+        {
+          "label": "05-24",
+          "count": 2
+        },
+        {
+          "label": "05-25",
+          "count": 2
+        },
+        {
+          "label": "05-26",
+          "count": 3
+        },
+        {
+          "label": "05-27",
+          "count": 3
+        },
+        {
+          "label": "05-28",
+          "count": 3
+        },
+        {
+          "label": "06-01",
+          "count": 2
+        },
+        {
+          "label": "06-02",
+          "count": 3
+        },
+        {
+          "label": "06-03",
+          "count": 5
+        },
+        {
+          "label": "06-04",
+          "count": 3
+        },
+        {
+          "label": "06-05",
+          "count": 5
+        },
+        {
+          "label": "06-06",
+          "count": 8
+        },
+        {
+          "label": "06-07",
+          "count": 4
+        },
+        {
+          "label": "06-08",
+          "count": 4
+        },
+        {
+          "label": "06-09",
+          "count": 3
+        },
+        {
+          "label": "06-10",
+          "count": 4
+        },
+        {
+          "label": "06-11",
+          "count": 6
+        },
+        {
+          "label": "06-12",
+          "count": 2
+        },
+        {
+          "label": "06-13",
+          "count": 1
+        },
+        {
+          "label": "06-14",
+          "count": 5
+        },
+        {
+          "label": "06-15",
+          "count": 5
+        },
+        {
+          "label": "06-16",
+          "count": 4
+        },
+        {
+          "label": "06-17",
+          "count": 1
+        },
+        {
+          "label": "06-18",
+          "count": 1
+        },
+        {
+          "label": "06-19",
+          "count": 4
+        },
+        {
+          "label": "06-20",
+          "count": 3
+        },
+        {
+          "label": "06-21",
+          "count": 6
+        },
+        {
+          "label": "06-22",
+          "count": 1
+        },
+        {
+          "label": "06-23",
+          "count": 5
+        },
+        {
+          "label": "06-24",
+          "count": 6
+        },
+        {
+          "label": "06-25",
+          "count": 1
+        },
+        {
+          "label": "06-26",
+          "count": 4
+        },
+        {
+          "label": "06-27",
+          "count": 6
+        },
+        {
+          "label": "06-28",
+          "count": 3
+        },
+        {
+          "label": "07-01",
+          "count": 1
+        },
+        {
+          "label": "07-02",
+          "count": 3
+        },
+        {
+          "label": "07-03",
+          "count": 10
+        },
+        {
+          "label": "07-04",
+          "count": 8
+        },
+        {
+          "label": "07-05",
+          "count": 4
+        },
+        {
+          "label": "07-06",
+          "count": 4
+        },
+        {
+          "label": "07-07",
+          "count": 4
+        },
+        {
+          "label": "07-08",
+          "count": 3
+        },
+        {
+          "label": "07-09",
+          "count": 5
+        },
+        {
+          "label": "07-10",
+          "count": 6
+        },
+        {
+          "label": "07-11",
+          "count": 3
+        },
+        {
+          "label": "07-12",
+          "count": 5
+        },
+        {
+          "label": "07-13",
+          "count": 7
+        },
+        {
+          "label": "07-14",
+          "count": 4
+        },
+        {
+          "label": "07-15",
+          "count": 4
+        },
+        {
+          "label": "07-16",
+          "count": 6
+        },
+        {
+          "label": "07-17",
+          "count": 6
+        },
+        {
+          "label": "07-18",
+          "count": 2
+        },
+        {
+          "label": "07-19",
+          "count": 3
+        },
+        {
+          "label": "07-20",
+          "count": 2
+        },
+        {
+          "label": "07-21",
+          "count": 4
+        },
+        {
+          "label": "07-22",
+          "count": 3
+        },
+        {
+          "label": "07-23",
+          "count": 4
+        },
+        {
+          "label": "07-24",
+          "count": 2
+        },
+        {
+          "label": "07-25",
+          "count": 2
+        },
+        {
+          "label": "07-26",
+          "count": 5
+        },
+        {
+          "label": "07-27",
+          "count": 2
+        },
+        {
+          "label": "07-28",
+          "count": 7
+        },
+        {
+          "label": "08-01",
+          "count": 3
+        },
+        {
+          "label": "08-02",
+          "count": 5
+        },
+        {
+          "label": "08-03",
+          "count": 3
+        },
+        {
+          "label": "08-04",
+          "count": 4
+        },
+        {
+          "label": "08-05",
+          "count": 5
+        },
+        {
+          "label": "08-06",
+          "count": 1
+        },
+        {
+          "label": "08-07",
+          "count": 2
+        },
+        {
+          "label": "08-08",
+          "count": 3
+        },
+        {
+          "label": "08-09",
+          "count": 1
+        },
+        {
+          "label": "08-11",
+          "count": 3
+        },
+        {
+          "label": "08-12",
+          "count": 4
+        },
+        {
+          "label": "08-13",
+          "count": 2
+        },
+        {
+          "label": "08-14",
+          "count": 2
+        },
+        {
+          "label": "08-15",
+          "count": 2
+        },
+        {
+          "label": "08-17",
+          "count": 5
+        },
+        {
+          "label": "08-18",
+          "count": 5
+        },
+        {
+          "label": "08-19",
+          "count": 8
+        },
+        {
+          "label": "08-20",
+          "count": 4
+        },
+        {
+          "label": "08-21",
+          "count": 2
+        },
+        {
+          "label": "08-22",
+          "count": 2
+        },
+        {
+          "label": "08-23",
+          "count": 3
+        },
+        {
+          "label": "08-24",
+          "count": 2
+        },
+        {
+          "label": "08-25",
+          "count": 4
+        },
+        {
+          "label": "08-26",
+          "count": 6
+        },
+        {
+          "label": "08-27",
+          "count": 3
+        },
+        {
+          "label": "08-28",
+          "count": 2
+        },
+        {
+          "label": "09-01",
+          "count": 5
+        },
+        {
+          "label": "09-02",
+          "count": 5
+        },
+        {
+          "label": "09-03",
+          "count": 3
+        },
+        {
+          "label": "09-04",
+          "count": 4
+        },
+        {
+          "label": "09-05",
+          "count": 4
+        },
+        {
+          "label": "09-06",
+          "count": 3
+        },
+        {
+          "label": "09-07",
+          "count": 3
+        },
+        {
+          "label": "09-08",
+          "count": 3
+        },
+        {
+          "label": "09-09",
+          "count": 4
+        },
+        {
+          "label": "09-10",
+          "count": 2
+        },
+        {
+          "label": "09-11",
+          "count": 4
+        },
+        {
+          "label": "09-12",
+          "count": 3
+        },
+        {
+          "label": "09-13",
+          "count": 1
+        },
+        {
+          "label": "09-14",
+          "count": 2
+        },
+        {
+          "label": "09-15",
+          "count": 3
+        },
+        {
+          "label": "09-16",
+          "count": 5
+        },
+        {
+          "label": "09-17",
+          "count": 1
+        },
+        {
+          "label": "09-19",
+          "count": 7
+        },
+        {
+          "label": "09-20",
+          "count": 4
+        },
+        {
+          "label": "09-21",
+          "count": 3
+        },
+        {
+          "label": "09-22",
+          "count": 3
+        },
+        {
+          "label": "09-23",
+          "count": 8
+        },
+        {
+          "label": "09-24",
+          "count": 5
+        },
+        {
+          "label": "09-25",
+          "count": 4
+        },
+        {
+          "label": "09-26",
+          "count": 2
+        },
+        {
+          "label": "09-27",
+          "count": 3
+        },
+        {
+          "label": "09-28",
+          "count": 3
+        },
+        {
+          "label": "10-01",
+          "count": 2
+        },
+        {
+          "label": "10-02",
+          "count": 5
+        },
+        {
+          "label": "10-03",
+          "count": 2
+        },
+        {
+          "label": "10-04",
+          "count": 3
+        },
+        {
+          "label": "10-05",
+          "count": 4
+        },
+        {
+          "label": "10-06",
+          "count": 5
+        },
+        {
+          "label": "10-07",
+          "count": 6
+        },
+        {
+          "label": "10-08",
+          "count": 3
+        },
+        {
+          "label": "10-09",
+          "count": 5
+        },
+        {
+          "label": "10-10",
+          "count": 5
+        },
+        {
+          "label": "10-11",
+          "count": 3
+        },
+        {
+          "label": "10-12",
+          "count": 4
+        },
+        {
+          "label": "10-13",
+          "count": 3
+        },
+        {
+          "label": "10-14",
+          "count": 3
+        },
+        {
+          "label": "10-15",
+          "count": 3
+        },
+        {
+          "label": "10-16",
+          "count": 5
+        },
+        {
+          "label": "10-17",
+          "count": 2
+        },
+        {
+          "label": "10-18",
+          "count": 2
+        },
+        {
+          "label": "10-19",
+          "count": 3
+        },
+        {
+          "label": "10-20",
+          "count": 2
+        },
+        {
+          "label": "10-21",
+          "count": 6
+        },
+        {
+          "label": "10-22",
+          "count": 6
+        },
+        {
+          "label": "10-23",
+          "count": 2
+        },
+        {
+          "label": "10-24",
+          "count": 6
+        },
+        {
+          "label": "10-25",
+          "count": 3
+        },
+        {
+          "label": "10-26",
+          "count": 5
+        },
+        {
+          "label": "10-27",
+          "count": 4
+        },
+        {
+          "label": "10-28",
+          "count": 3
+        },
+        {
+          "label": "11-01",
+          "count": 5
+        },
+        {
+          "label": "11-02",
+          "count": 4
+        },
+        {
+          "label": "11-03",
+          "count": 1
+        },
+        {
+          "label": "11-04",
+          "count": 7
+        },
+        {
+          "label": "11-05",
+          "count": 4
+        },
+        {
+          "label": "11-06",
+          "count": 4
+        },
+        {
+          "label": "11-08",
+          "count": 5
+        },
+        {
+          "label": "11-09",
+          "count": 3
+        },
+        {
+          "label": "11-10",
+          "count": 5
+        },
+        {
+          "label": "11-11",
+          "count": 5
+        },
+        {
+          "label": "11-12",
+          "count": 1
+        },
+        {
+          "label": "11-13",
+          "count": 3
+        },
+        {
+          "label": "11-14",
+          "count": 3
+        },
+        {
+          "label": "11-15",
+          "count": 1
+        },
+        {
+          "label": "11-16",
+          "count": 4
+        },
+        {
+          "label": "11-17",
+          "count": 5
+        },
+        {
+          "label": "11-18",
+          "count": 3
+        },
+        {
+          "label": "11-19",
+          "count": 2
+        },
+        {
+          "label": "11-20",
+          "count": 4
+        },
+        {
+          "label": "11-21",
+          "count": 5
+        },
+        {
+          "label": "11-22",
+          "count": 4
+        },
+        {
+          "label": "11-23",
+          "count": 4
+        },
+        {
+          "label": "11-24",
+          "count": 2
+        },
+        {
+          "label": "11-25",
+          "count": 4
+        },
+        {
+          "label": "11-26",
+          "count": 4
+        },
+        {
+          "label": "11-27",
+          "count": 6
+        },
+        {
+          "label": "11-28",
+          "count": 2
+        },
+        {
+          "label": "12-01",
+          "count": 4
+        },
+        {
+          "label": "12-02",
+          "count": 2
+        },
+        {
+          "label": "12-03",
+          "count": 7
+        },
+        {
+          "label": "12-04",
+          "count": 3
+        },
+        {
+          "label": "12-05",
+          "count": 1
+        },
+        {
+          "label": "12-06",
+          "count": 7
+        },
+        {
+          "label": "12-07",
+          "count": 2
+        },
+        {
+          "label": "12-08",
+          "count": 5
+        },
+        {
+          "label": "12-09",
+          "count": 2
+        },
+        {
+          "label": "12-10",
+          "count": 3
+        },
+        {
+          "label": "12-11",
+          "count": 3
+        },
+        {
+          "label": "12-12",
+          "count": 3
+        },
+        {
+          "label": "12-13",
+          "count": 3
+        },
+        {
+          "label": "12-14",
+          "count": 7
+        },
+        {
+          "label": "12-15",
+          "count": 2
+        },
+        {
+          "label": "12-16",
+          "count": 9
+        },
+        {
+          "label": "12-17",
+          "count": 5
+        },
+        {
+          "label": "12-18",
+          "count": 2
+        },
+        {
+          "label": "12-19",
+          "count": 4
+        },
+        {
+          "label": "12-20",
+          "count": 2
+        },
+        {
+          "label": "12-21",
+          "count": 4
+        },
+        {
+          "label": "12-22",
+          "count": 5
+        },
+        {
+          "label": "12-23",
+          "count": 5
+        },
+        {
+          "label": "12-24",
+          "count": 4
+        },
+        {
+          "label": "12-25",
+          "count": 6
+        },
+        {
+          "label": "12-26",
+          "count": 3
+        },
+        {
+          "label": "12-27",
+          "count": 1
+        },
+        {
+          "label": "12-28",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "field": "country",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 6,
+      "min": "DE",
+      "max": "PT",
+      "issues": [],
+      "topk": [
+        {
+          "label": "FR",
+          "count": 218
+        },
+        {
+          "label": "GR",
+          "count": 204
+        },
+        {
+          "label": "ES",
+          "count": 199
+        },
+        {
+          "label": "DE",
+          "count": 196
+        },
+        {
+          "label": "PT",
+          "count": 194
+        },
+        {
+          "label": "IT",
+          "count": 189
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 0,
+        "other": 100
+      }
+    },
+    {
+      "field": "segment",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 0,
+      "distinct": 4,
+      "min": "consumer",
+      "max": "smb",
+      "issues": [],
+      "topk": [
+        {
+          "label": "consumer",
+          "count": 314
+        },
+        {
+          "label": "mid_market",
+          "count": 310
+        },
+        {
+          "label": "enterprise",
+          "count": 291
+        },
+        {
+          "label": "smb",
+          "count": 285
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 0,
+        "other": 100
+      }
+    },
+    {
+      "field": "email",
+      "declaredType": "string",
+      "observedType": "VARCHAR",
+      "missingPct": 13.333333333333334,
+      "distinct": 1040,
+      "min": "user1000@example.com",
+      "max": "user9@example.com",
+      "issues": [
+        {
+          "kind": "missing-spike",
+          "severity": "serious",
+          "message": "13.3% of values are missing or empty."
+        }
+      ],
+      "topk": [
+        {
+          "label": "∅ empty",
+          "count": 160
+        },
+        {
+          "label": "user2@example.com",
+          "count": 1
+        },
+        {
+          "label": "user3@example.com",
+          "count": 1
+        },
+        {
+          "label": "user4@example.com",
+          "count": 1
+        },
+        {
+          "label": "user6@example.com",
+          "count": 1
+        },
+        {
+          "label": "user8@example.com",
+          "count": 1
+        }
+      ],
+      "patternBreakdown": {
+        "isoTimestamp": 0,
+        "numeric": 0,
+        "empty": 13.333333333333334,
+        "other": 86.66666666666667
+      }
+    },
+    {
+      "field": "marketing_consent",
+      "declaredType": "boolean",
+      "observedType": "BOOLEAN",
+      "missingPct": 0,
+      "distinct": 2,
+      "min": "false",
+      "max": "true",
+      "issues": []
+    },
+    {
+      "field": "is_active",
+      "declaredType": "boolean",
+      "observedType": "BOOLEAN",
+      "missingPct": 0,
+      "distinct": 2,
+      "min": "false",
+      "max": "true",
+      "issues": []
+    }
+  ],
+  "health": 80,
+  "worst": "serious",
+  "profiledAt": "2026-08-05T21:16:39.871Z"
+}

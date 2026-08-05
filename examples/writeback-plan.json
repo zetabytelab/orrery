@@ -1,0 +1,21 @@
+{
+  "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
+  "calls": [
+    {
+      "tool": "update_description",
+      "args": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
+        "description": "**Orrery data profile** `[orrery-profile 2026-08-05]`\n\nHealth **80/100** over 1,200 rows, 7 columns.\n\nObserved issues:\n- `email`: 13.3% of values are missing or empty.\n\nDownstream blast radius: dim_customer_health, churn_model, exec_revenue_dashboard."
+      }
+    },
+    {
+      "tool": "add_tags",
+      "args": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
+        "tags": [
+          "urn:li:tag:orrery-serious"
+        ]
+      }
+    }
+  ]
+}

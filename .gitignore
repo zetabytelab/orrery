@@ -1,0 +1,21 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# generated local assets
+/public/duckdb/
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+
+# python ingestion venv
+/ingest/.venv/
+__pycache__/
+tsconfig.tsbuildinfo

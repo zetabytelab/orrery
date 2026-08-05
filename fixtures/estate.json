@@ -1,0 +1,185 @@
+{
+  "source": "fixture",
+  "generatedAt": "2026-08-05T00:00:00Z",
+  "domain": "Commerce Analytics",
+  "datasets": [
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_orders,PROD)",
+      "name": "raw_orders",
+      "platform": "s3",
+      "layer": "raw",
+      "description": "Order events landed from the commerce API, one row per order.",
+      "owner": "data-platform",
+      "tags": ["pii-free", "landing"],
+      "csv": "/estate/raw_orders.csv",
+      "schema": [
+        { "field": "order_id", "type": "string", "description": "Unique order identifier" },
+        { "field": "customer_id", "type": "string", "description": "FK to raw_customers" },
+        { "field": "order_ts", "type": "timestamp", "description": "Order placement time (UTC)" },
+        { "field": "channel", "type": "string", "description": "Sales channel" },
+        { "field": "amount_eur", "type": "double", "description": "Gross order value in EUR" },
+        { "field": "items", "type": "long", "description": "Item count" },
+        { "field": "status", "type": "string", "description": "completed | refunded" }
+      ]
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_customers,PROD)",
+      "name": "raw_customers",
+      "platform": "s3",
+      "layer": "raw",
+      "description": "Customer master extract from the CRM, refreshed nightly.",
+      "owner": "data-platform",
+      "tags": ["pii", "landing"],
+      "csv": "/estate/raw_customers.csv",
+      "schema": [
+        { "field": "customer_id", "type": "string", "description": "Unique customer identifier" },
+        { "field": "signup_date", "type": "date", "description": "Account creation date" },
+        { "field": "country", "type": "string", "description": "ISO-3166 alpha-2" },
+        { "field": "segment", "type": "string", "description": "Commercial segment" },
+        { "field": "email", "type": "string", "description": "Contact email (PII)" },
+        { "field": "marketing_consent", "type": "boolean", "description": "GDPR marketing consent flag" }
+      ]
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_events,PROD)",
+      "name": "raw_events",
+      "platform": "s3",
+      "layer": "raw",
+      "description": "Product telemetry events from web and mobile clients.",
+      "owner": "data-platform",
+      "tags": ["telemetry", "landing"],
+      "csv": "/estate/raw_events.csv",
+      "schema": [
+        { "field": "event_id", "type": "string", "description": "Unique event identifier" },
+        { "field": "customer_id", "type": "string", "description": "FK to raw_customers" },
+        { "field": "event_type", "type": "string", "description": "Event taxonomy name" },
+        { "field": "event_ts", "type": "timestamp", "description": "Client event time (UTC)" },
+        { "field": "session_minutes", "type": "double", "description": "Session duration attribution" },
+        { "field": "device", "type": "string", "description": "Client device class" }
+      ]
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_orders,PROD)",
+      "name": "stg_orders",
+      "platform": "dbt",
+      "layer": "staging",
+      "description": "Completed orders only, with net revenue after fees.",
+      "owner": "growth-analytics",
+      "tags": ["staging"],
+      "csv": "/estate/stg_orders.csv",
+      "schema": [
+        { "field": "order_id", "type": "string", "description": "Unique order identifier" },
+        { "field": "customer_id", "type": "string", "description": "FK to stg_customers" },
+        { "field": "order_ts", "type": "timestamp", "description": "Order placement time (UTC)" },
+        { "field": "channel", "type": "string", "description": "Sales channel" },
+        { "field": "amount_eur", "type": "double", "description": "Gross order value in EUR" },
+        { "field": "items", "type": "long", "description": "Item count" },
+        { "field": "status", "type": "string", "description": "Always completed at this layer" },
+        { "field": "amount_eur_net", "type": "double", "description": "Net revenue after fees" }
+      ]
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
+      "name": "stg_customers",
+      "platform": "dbt",
+      "layer": "staging",
+      "description": "Cleaned customer dimension with activity flag; emails pass the consent scrubber.",
+      "owner": "growth-analytics",
+      "tags": ["staging", "pii"],
+      "csv": "/estate/stg_customers.csv",
+      "schema": [
+        { "field": "customer_id", "type": "string", "description": "Unique customer identifier" },
+        { "field": "signup_date", "type": "date", "description": "Account creation date" },
+        { "field": "country", "type": "string", "description": "ISO-3166 alpha-2" },
+        { "field": "segment", "type": "string", "description": "Commercial segment" },
+        { "field": "email", "type": "string", "description": "Contact email after consent scrub (PII)" },
+        { "field": "marketing_consent", "type": "boolean", "description": "GDPR marketing consent flag" },
+        { "field": "is_active", "type": "boolean", "description": "Active in the trailing 90 days" }
+      ]
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_events,PROD)",
+      "name": "stg_events",
+      "platform": "dbt",
+      "layer": "staging",
+      "description": "Deduplicated telemetry events normalised to UTC timestamps.",
+      "owner": "growth-analytics",
+      "tags": ["staging", "telemetry"],
+      "csv": "/estate/stg_events.csv",
+      "schema": [
+        { "field": "event_id", "type": "string", "description": "Unique event identifier" },
+        { "field": "customer_id", "type": "string", "description": "FK to stg_customers" },
+        { "field": "event_type", "type": "string", "description": "Event taxonomy name" },
+        { "field": "event_ts", "type": "timestamp", "description": "Normalised event time (UTC, ISO-8601)" },
+        { "field": "session_minutes", "type": "double", "description": "Session duration attribution" },
+        { "field": "device", "type": "string", "description": "Client device class" }
+      ]
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.fct_revenue_daily,PROD)",
+      "name": "fct_revenue_daily",
+      "platform": "snowflake",
+      "layer": "mart",
+      "description": "Daily net revenue by channel; feeds executive reporting.",
+      "owner": "growth-analytics",
+      "tags": ["mart", "certified"],
+      "csv": "/estate/fct_revenue_daily.csv",
+      "schema": [
+        { "field": "order_date", "type": "date", "description": "Revenue day (UTC)" },
+        { "field": "channel", "type": "string", "description": "Sales channel" },
+        { "field": "orders", "type": "long", "description": "Completed order count" },
+        { "field": "revenue_eur", "type": "double", "description": "Net revenue in EUR" },
+        { "field": "items", "type": "long", "description": "Items sold" }
+      ]
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.dim_customer_health,PROD)",
+      "name": "dim_customer_health",
+      "platform": "snowflake",
+      "layer": "mart",
+      "description": "Per-customer health score and churn-risk band; primary churn-model feature table.",
+      "owner": "ml-platform",
+      "tags": ["mart", "ml-features", "certified"],
+      "csv": "/estate/dim_customer_health.csv",
+      "schema": [
+        { "field": "customer_id", "type": "string", "description": "Unique customer identifier" },
+        { "field": "segment", "type": "string", "description": "Commercial segment" },
+        { "field": "country", "type": "string", "description": "ISO-3166 alpha-2" },
+        { "field": "orders_30d", "type": "long", "description": "Orders in trailing 30 days" },
+        { "field": "support_tickets_30d", "type": "long", "description": "Support tickets in trailing 30 days" },
+        { "field": "reachable_by_email", "type": "boolean", "description": "Has a contactable email after consent scrub" },
+        { "field": "health_score", "type": "long", "description": "0-100 composite health score" },
+        { "field": "churn_risk_band", "type": "string", "description": "high | medium | low" }
+      ]
+    }
+  ],
+  "consumers": [
+    {
+      "urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,orrery.churn_model,PROD)",
+      "name": "churn_model",
+      "type": "ml_model",
+      "description": "Gradient-boosted churn classifier retrained weekly from dim_customer_health.",
+      "owner": "ml-platform",
+      "tags": ["production-model"]
+    },
+    {
+      "urn": "urn:li:dashboard:(looker,orrery.exec_revenue_dashboard)",
+      "name": "exec_revenue_dashboard",
+      "type": "dashboard",
+      "description": "C-suite revenue and retention dashboard, reviewed every Monday.",
+      "owner": "growth-analytics",
+      "tags": ["executive"]
+    }
+  ],
+  "edges": [
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_orders,PROD)", "downstream": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_orders,PROD)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_customers,PROD)", "downstream": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_events,PROD)", "downstream": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_events,PROD)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_orders,PROD)", "downstream": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.fct_revenue_daily,PROD)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)", "downstream": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.dim_customer_health,PROD)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_events,PROD)", "downstream": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.dim_customer_health,PROD)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.fct_revenue_daily,PROD)", "downstream": "urn:li:dashboard:(looker,orrery.exec_revenue_dashboard)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.dim_customer_health,PROD)", "downstream": "urn:li:dashboard:(looker,orrery.exec_revenue_dashboard)" },
+    { "upstream": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.dim_customer_health,PROD)", "downstream": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,orrery.churn_model,PROD)" }
+  ]
+}

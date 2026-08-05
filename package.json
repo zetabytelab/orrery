@@ -1,0 +1,36 @@
+{
+  "name": "orrery",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "node scripts/copy-duckdb-assets.mjs",
+    "lint": "eslint . --ignore-pattern .next --ignore-pattern public/duckdb"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^1.1.4",
+    "@duckdb/duckdb-wasm": "^1.33.1-dev57.0",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@xyflow/react": "^12.8.0",
+    "lucide-react": "^1.28.0",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3"
+  }
+}

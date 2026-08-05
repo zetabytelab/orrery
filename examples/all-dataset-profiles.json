@@ -1,0 +1,5174 @@
+{
+  "raw_orders": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_orders,PROD)",
+    "rows": 5000,
+    "columns": [
+      {
+        "field": "order_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 5000,
+        "min": "O000001",
+        "max": "O005000",
+        "issues": [],
+        "topk": [
+          {
+            "label": "O000001",
+            "count": 1
+          },
+          {
+            "label": "O000002",
+            "count": 1
+          },
+          {
+            "label": "O000003",
+            "count": 1
+          },
+          {
+            "label": "O000004",
+            "count": 1
+          },
+          {
+            "label": "O000005",
+            "count": 1
+          },
+          {
+            "label": "O000006",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "customer_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1183,
+        "min": "C00001",
+        "max": "C01200",
+        "issues": [],
+        "topk": [
+          {
+            "label": "C00560",
+            "count": 13
+          },
+          {
+            "label": "C01163",
+            "count": 11
+          },
+          {
+            "label": "C01119",
+            "count": 10
+          },
+          {
+            "label": "C00065",
+            "count": 10
+          },
+          {
+            "label": "C00262",
+            "count": 10
+          },
+          {
+            "label": "C01040",
+            "count": 10
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "order_ts",
+        "declaredType": "timestamp",
+        "observedType": "TIMESTAMP WITH TIME ZONE",
+        "missingPct": 0,
+        "distinct": 4996,
+        "min": "1782864065000",
+        "max": "1785542368000",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "07-01",
+            "count": 188
+          },
+          {
+            "label": "07-02",
+            "count": 166
+          },
+          {
+            "label": "07-03",
+            "count": 145
+          },
+          {
+            "label": "07-04",
+            "count": 149
+          },
+          {
+            "label": "07-05",
+            "count": 163
+          },
+          {
+            "label": "07-06",
+            "count": 171
+          },
+          {
+            "label": "07-07",
+            "count": 185
+          },
+          {
+            "label": "07-08",
+            "count": 157
+          },
+          {
+            "label": "07-09",
+            "count": 157
+          },
+          {
+            "label": "07-10",
+            "count": 166
+          },
+          {
+            "label": "07-11",
+            "count": 175
+          },
+          {
+            "label": "07-12",
+            "count": 143
+          },
+          {
+            "label": "07-13",
+            "count": 163
+          },
+          {
+            "label": "07-14",
+            "count": 173
+          },
+          {
+            "label": "07-15",
+            "count": 186
+          },
+          {
+            "label": "07-16",
+            "count": 156
+          },
+          {
+            "label": "07-17",
+            "count": 161
+          },
+          {
+            "label": "07-18",
+            "count": 152
+          },
+          {
+            "label": "07-19",
+            "count": 173
+          },
+          {
+            "label": "07-20",
+            "count": 154
+          },
+          {
+            "label": "07-21",
+            "count": 141
+          },
+          {
+            "label": "07-22",
+            "count": 156
+          },
+          {
+            "label": "07-23",
+            "count": 165
+          },
+          {
+            "label": "07-24",
+            "count": 137
+          },
+          {
+            "label": "07-25",
+            "count": 149
+          },
+          {
+            "label": "07-26",
+            "count": 159
+          },
+          {
+            "label": "07-27",
+            "count": 180
+          },
+          {
+            "label": "07-28",
+            "count": 155
+          },
+          {
+            "label": "07-29",
+            "count": 160
+          },
+          {
+            "label": "07-30",
+            "count": 145
+          },
+          {
+            "label": "07-31",
+            "count": 170
+          }
+        ]
+      },
+      {
+        "field": "channel",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "mobile",
+        "max": "web",
+        "issues": [],
+        "topk": [
+          {
+            "label": "web",
+            "count": 1288
+          },
+          {
+            "label": "mobile",
+            "count": 1253
+          },
+          {
+            "label": "store",
+            "count": 1243
+          },
+          {
+            "label": "partner",
+            "count": 1216
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "amount_eur",
+        "declaredType": "double",
+        "observedType": "DOUBLE",
+        "missingPct": 0,
+        "distinct": 4742,
+        "min": "5",
+        "max": "499.91",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 461
+          },
+          {
+            "label": "bin 1",
+            "count": 403
+          },
+          {
+            "label": "bin 2",
+            "count": 405
+          },
+          {
+            "label": "bin 3",
+            "count": 400
+          },
+          {
+            "label": "bin 4",
+            "count": 425
+          },
+          {
+            "label": "bin 5",
+            "count": 440
+          },
+          {
+            "label": "bin 6",
+            "count": 416
+          },
+          {
+            "label": "bin 7",
+            "count": 372
+          },
+          {
+            "label": "bin 8",
+            "count": 409
+          },
+          {
+            "label": "bin 9",
+            "count": 430
+          },
+          {
+            "label": "bin 10",
+            "count": 399
+          },
+          {
+            "label": "bin 11",
+            "count": 440
+          }
+        ]
+      },
+      {
+        "field": "items",
+        "declaredType": "long",
+        "observedType": "BIGINT",
+        "missingPct": 0,
+        "distinct": 6,
+        "min": "1",
+        "max": "6",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 852
+          },
+          {
+            "label": "bin 2",
+            "count": 811
+          },
+          {
+            "label": "bin 4",
+            "count": 843
+          },
+          {
+            "label": "bin 7",
+            "count": 816
+          },
+          {
+            "label": "bin 9",
+            "count": 830
+          },
+          {
+            "label": "bin 11",
+            "count": 848
+          }
+        ]
+      },
+      {
+        "field": "status",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 2,
+        "min": "completed",
+        "max": "refunded",
+        "issues": [],
+        "topk": [
+          {
+            "label": "completed",
+            "count": 4670
+          },
+          {
+            "label": "refunded",
+            "count": 330
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      }
+    ],
+    "health": 100,
+    "worst": "good",
+    "profiledAt": "2026-08-05T21:16:38.552Z"
+  },
+  "raw_customers": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_customers,PROD)",
+    "rows": 1200,
+    "columns": [
+      {
+        "field": "customer_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1200,
+        "min": "C00001",
+        "max": "C01200",
+        "issues": [],
+        "topk": [
+          {
+            "label": "C00001",
+            "count": 1
+          },
+          {
+            "label": "C00002",
+            "count": 1
+          },
+          {
+            "label": "C00003",
+            "count": 1
+          },
+          {
+            "label": "C00004",
+            "count": 1
+          },
+          {
+            "label": "C00005",
+            "count": 1
+          },
+          {
+            "label": "C00006",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "signup_date",
+        "declaredType": "date",
+        "observedType": "DATE",
+        "missingPct": 0,
+        "distinct": 327,
+        "min": "1735689600000",
+        "max": "1766880000000",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "01-01",
+            "count": 5
+          },
+          {
+            "label": "01-02",
+            "count": 5
+          },
+          {
+            "label": "01-04",
+            "count": 7
+          },
+          {
+            "label": "01-05",
+            "count": 2
+          },
+          {
+            "label": "01-06",
+            "count": 3
+          },
+          {
+            "label": "01-07",
+            "count": 1
+          },
+          {
+            "label": "01-08",
+            "count": 4
+          },
+          {
+            "label": "01-09",
+            "count": 5
+          },
+          {
+            "label": "01-10",
+            "count": 2
+          },
+          {
+            "label": "01-11",
+            "count": 4
+          },
+          {
+            "label": "01-12",
+            "count": 5
+          },
+          {
+            "label": "01-13",
+            "count": 5
+          },
+          {
+            "label": "01-14",
+            "count": 3
+          },
+          {
+            "label": "01-15",
+            "count": 8
+          },
+          {
+            "label": "01-16",
+            "count": 2
+          },
+          {
+            "label": "01-17",
+            "count": 1
+          },
+          {
+            "label": "01-18",
+            "count": 7
+          },
+          {
+            "label": "01-19",
+            "count": 2
+          },
+          {
+            "label": "01-20",
+            "count": 2
+          },
+          {
+            "label": "01-21",
+            "count": 3
+          },
+          {
+            "label": "01-22",
+            "count": 7
+          },
+          {
+            "label": "01-23",
+            "count": 4
+          },
+          {
+            "label": "01-24",
+            "count": 4
+          },
+          {
+            "label": "01-25",
+            "count": 5
+          },
+          {
+            "label": "01-26",
+            "count": 1
+          },
+          {
+            "label": "01-27",
+            "count": 1
+          },
+          {
+            "label": "01-28",
+            "count": 3
+          },
+          {
+            "label": "02-01",
+            "count": 5
+          },
+          {
+            "label": "02-02",
+            "count": 3
+          },
+          {
+            "label": "02-03",
+            "count": 3
+          },
+          {
+            "label": "02-04",
+            "count": 2
+          },
+          {
+            "label": "02-05",
+            "count": 3
+          },
+          {
+            "label": "02-06",
+            "count": 1
+          },
+          {
+            "label": "02-07",
+            "count": 10
+          },
+          {
+            "label": "02-08",
+            "count": 2
+          },
+          {
+            "label": "02-09",
+            "count": 3
+          },
+          {
+            "label": "02-10",
+            "count": 2
+          },
+          {
+            "label": "02-11",
+            "count": 5
+          },
+          {
+            "label": "02-12",
+            "count": 2
+          },
+          {
+            "label": "02-13",
+            "count": 3
+          },
+          {
+            "label": "02-14",
+            "count": 9
+          },
+          {
+            "label": "02-15",
+            "count": 5
+          },
+          {
+            "label": "02-16",
+            "count": 7
+          },
+          {
+            "label": "02-17",
+            "count": 3
+          },
+          {
+            "label": "02-18",
+            "count": 2
+          },
+          {
+            "label": "02-19",
+            "count": 7
+          },
+          {
+            "label": "02-20",
+            "count": 3
+          },
+          {
+            "label": "02-21",
+            "count": 4
+          },
+          {
+            "label": "02-22",
+            "count": 4
+          },
+          {
+            "label": "02-23",
+            "count": 3
+          },
+          {
+            "label": "02-24",
+            "count": 3
+          },
+          {
+            "label": "02-25",
+            "count": 4
+          },
+          {
+            "label": "02-26",
+            "count": 6
+          },
+          {
+            "label": "02-27",
+            "count": 2
+          },
+          {
+            "label": "02-28",
+            "count": 6
+          },
+          {
+            "label": "03-01",
+            "count": 2
+          },
+          {
+            "label": "03-02",
+            "count": 6
+          },
+          {
+            "label": "03-03",
+            "count": 5
+          },
+          {
+            "label": "03-04",
+            "count": 5
+          },
+          {
+            "label": "03-05",
+            "count": 6
+          },
+          {
+            "label": "03-06",
+            "count": 4
+          },
+          {
+            "label": "03-07",
+            "count": 2
+          },
+          {
+            "label": "03-08",
+            "count": 1
+          },
+          {
+            "label": "03-09",
+            "count": 2
+          },
+          {
+            "label": "03-10",
+            "count": 4
+          },
+          {
+            "label": "03-11",
+            "count": 3
+          },
+          {
+            "label": "03-12",
+            "count": 5
+          },
+          {
+            "label": "03-13",
+            "count": 5
+          },
+          {
+            "label": "03-14",
+            "count": 3
+          },
+          {
+            "label": "03-15",
+            "count": 2
+          },
+          {
+            "label": "03-16",
+            "count": 2
+          },
+          {
+            "label": "03-17",
+            "count": 5
+          },
+          {
+            "label": "03-18",
+            "count": 2
+          },
+          {
+            "label": "03-19",
+            "count": 4
+          },
+          {
+            "label": "03-20",
+            "count": 3
+          },
+          {
+            "label": "03-21",
+            "count": 1
+          },
+          {
+            "label": "03-22",
+            "count": 2
+          },
+          {
+            "label": "03-23",
+            "count": 3
+          },
+          {
+            "label": "03-24",
+            "count": 5
+          },
+          {
+            "label": "03-26",
+            "count": 2
+          },
+          {
+            "label": "03-27",
+            "count": 2
+          },
+          {
+            "label": "03-28",
+            "count": 1
+          },
+          {
+            "label": "04-01",
+            "count": 6
+          },
+          {
+            "label": "04-02",
+            "count": 1
+          },
+          {
+            "label": "04-03",
+            "count": 5
+          },
+          {
+            "label": "04-04",
+            "count": 3
+          },
+          {
+            "label": "04-05",
+            "count": 3
+          },
+          {
+            "label": "04-06",
+            "count": 3
+          },
+          {
+            "label": "04-07",
+            "count": 3
+          },
+          {
+            "label": "04-08",
+            "count": 3
+          },
+          {
+            "label": "04-09",
+            "count": 2
+          },
+          {
+            "label": "04-10",
+            "count": 3
+          },
+          {
+            "label": "04-11",
+            "count": 3
+          },
+          {
+            "label": "04-12",
+            "count": 3
+          },
+          {
+            "label": "04-13",
+            "count": 3
+          },
+          {
+            "label": "04-14",
+            "count": 2
+          },
+          {
+            "label": "04-16",
+            "count": 5
+          },
+          {
+            "label": "04-17",
+            "count": 5
+          },
+          {
+            "label": "04-18",
+            "count": 3
+          },
+          {
+            "label": "04-19",
+            "count": 4
+          },
+          {
+            "label": "04-20",
+            "count": 3
+          },
+          {
+            "label": "04-21",
+            "count": 3
+          },
+          {
+            "label": "04-22",
+            "count": 1
+          },
+          {
+            "label": "04-23",
+            "count": 3
+          },
+          {
+            "label": "04-24",
+            "count": 8
+          },
+          {
+            "label": "04-25",
+            "count": 9
+          },
+          {
+            "label": "04-26",
+            "count": 4
+          },
+          {
+            "label": "04-27",
+            "count": 2
+          },
+          {
+            "label": "04-28",
+            "count": 3
+          },
+          {
+            "label": "05-01",
+            "count": 1
+          },
+          {
+            "label": "05-02",
+            "count": 2
+          },
+          {
+            "label": "05-03",
+            "count": 6
+          },
+          {
+            "label": "05-04",
+            "count": 3
+          },
+          {
+            "label": "05-05",
+            "count": 4
+          },
+          {
+            "label": "05-06",
+            "count": 3
+          },
+          {
+            "label": "05-07",
+            "count": 4
+          },
+          {
+            "label": "05-08",
+            "count": 3
+          },
+          {
+            "label": "05-09",
+            "count": 4
+          },
+          {
+            "label": "05-10",
+            "count": 4
+          },
+          {
+            "label": "05-11",
+            "count": 7
+          },
+          {
+            "label": "05-12",
+            "count": 3
+          },
+          {
+            "label": "05-13",
+            "count": 2
+          },
+          {
+            "label": "05-14",
+            "count": 2
+          },
+          {
+            "label": "05-15",
+            "count": 6
+          },
+          {
+            "label": "05-17",
+            "count": 1
+          },
+          {
+            "label": "05-18",
+            "count": 5
+          },
+          {
+            "label": "05-19",
+            "count": 3
+          },
+          {
+            "label": "05-21",
+            "count": 6
+          },
+          {
+            "label": "05-22",
+            "count": 3
+          },
+          {
+            "label": "05-23",
+            "count": 1
+          },
+          {
+            "label": "05-24",
+            "count": 2
+          },
+          {
+            "label": "05-25",
+            "count": 2
+          },
+          {
+            "label": "05-26",
+            "count": 3
+          },
+          {
+            "label": "05-27",
+            "count": 3
+          },
+          {
+            "label": "05-28",
+            "count": 3
+          },
+          {
+            "label": "06-01",
+            "count": 2
+          },
+          {
+            "label": "06-02",
+            "count": 3
+          },
+          {
+            "label": "06-03",
+            "count": 5
+          },
+          {
+            "label": "06-04",
+            "count": 3
+          },
+          {
+            "label": "06-05",
+            "count": 5
+          },
+          {
+            "label": "06-06",
+            "count": 8
+          },
+          {
+            "label": "06-07",
+            "count": 4
+          },
+          {
+            "label": "06-08",
+            "count": 4
+          },
+          {
+            "label": "06-09",
+            "count": 3
+          },
+          {
+            "label": "06-10",
+            "count": 4
+          },
+          {
+            "label": "06-11",
+            "count": 6
+          },
+          {
+            "label": "06-12",
+            "count": 2
+          },
+          {
+            "label": "06-13",
+            "count": 1
+          },
+          {
+            "label": "06-14",
+            "count": 5
+          },
+          {
+            "label": "06-15",
+            "count": 5
+          },
+          {
+            "label": "06-16",
+            "count": 4
+          },
+          {
+            "label": "06-17",
+            "count": 1
+          },
+          {
+            "label": "06-18",
+            "count": 1
+          },
+          {
+            "label": "06-19",
+            "count": 4
+          },
+          {
+            "label": "06-20",
+            "count": 3
+          },
+          {
+            "label": "06-21",
+            "count": 6
+          },
+          {
+            "label": "06-22",
+            "count": 1
+          },
+          {
+            "label": "06-23",
+            "count": 5
+          },
+          {
+            "label": "06-24",
+            "count": 6
+          },
+          {
+            "label": "06-25",
+            "count": 1
+          },
+          {
+            "label": "06-26",
+            "count": 4
+          },
+          {
+            "label": "06-27",
+            "count": 6
+          },
+          {
+            "label": "06-28",
+            "count": 3
+          },
+          {
+            "label": "07-01",
+            "count": 1
+          },
+          {
+            "label": "07-02",
+            "count": 3
+          },
+          {
+            "label": "07-03",
+            "count": 10
+          },
+          {
+            "label": "07-04",
+            "count": 8
+          },
+          {
+            "label": "07-05",
+            "count": 4
+          },
+          {
+            "label": "07-06",
+            "count": 4
+          },
+          {
+            "label": "07-07",
+            "count": 4
+          },
+          {
+            "label": "07-08",
+            "count": 3
+          },
+          {
+            "label": "07-09",
+            "count": 5
+          },
+          {
+            "label": "07-10",
+            "count": 6
+          },
+          {
+            "label": "07-11",
+            "count": 3
+          },
+          {
+            "label": "07-12",
+            "count": 5
+          },
+          {
+            "label": "07-13",
+            "count": 7
+          },
+          {
+            "label": "07-14",
+            "count": 4
+          },
+          {
+            "label": "07-15",
+            "count": 4
+          },
+          {
+            "label": "07-16",
+            "count": 6
+          },
+          {
+            "label": "07-17",
+            "count": 6
+          },
+          {
+            "label": "07-18",
+            "count": 2
+          },
+          {
+            "label": "07-19",
+            "count": 3
+          },
+          {
+            "label": "07-20",
+            "count": 2
+          },
+          {
+            "label": "07-21",
+            "count": 4
+          },
+          {
+            "label": "07-22",
+            "count": 3
+          },
+          {
+            "label": "07-23",
+            "count": 4
+          },
+          {
+            "label": "07-24",
+            "count": 2
+          },
+          {
+            "label": "07-25",
+            "count": 2
+          },
+          {
+            "label": "07-26",
+            "count": 5
+          },
+          {
+            "label": "07-27",
+            "count": 2
+          },
+          {
+            "label": "07-28",
+            "count": 7
+          },
+          {
+            "label": "08-01",
+            "count": 3
+          },
+          {
+            "label": "08-02",
+            "count": 5
+          },
+          {
+            "label": "08-03",
+            "count": 3
+          },
+          {
+            "label": "08-04",
+            "count": 4
+          },
+          {
+            "label": "08-05",
+            "count": 5
+          },
+          {
+            "label": "08-06",
+            "count": 1
+          },
+          {
+            "label": "08-07",
+            "count": 2
+          },
+          {
+            "label": "08-08",
+            "count": 3
+          },
+          {
+            "label": "08-09",
+            "count": 1
+          },
+          {
+            "label": "08-11",
+            "count": 3
+          },
+          {
+            "label": "08-12",
+            "count": 4
+          },
+          {
+            "label": "08-13",
+            "count": 2
+          },
+          {
+            "label": "08-14",
+            "count": 2
+          },
+          {
+            "label": "08-15",
+            "count": 2
+          },
+          {
+            "label": "08-17",
+            "count": 5
+          },
+          {
+            "label": "08-18",
+            "count": 5
+          },
+          {
+            "label": "08-19",
+            "count": 8
+          },
+          {
+            "label": "08-20",
+            "count": 4
+          },
+          {
+            "label": "08-21",
+            "count": 2
+          },
+          {
+            "label": "08-22",
+            "count": 2
+          },
+          {
+            "label": "08-23",
+            "count": 3
+          },
+          {
+            "label": "08-24",
+            "count": 2
+          },
+          {
+            "label": "08-25",
+            "count": 4
+          },
+          {
+            "label": "08-26",
+            "count": 6
+          },
+          {
+            "label": "08-27",
+            "count": 3
+          },
+          {
+            "label": "08-28",
+            "count": 2
+          },
+          {
+            "label": "09-01",
+            "count": 5
+          },
+          {
+            "label": "09-02",
+            "count": 5
+          },
+          {
+            "label": "09-03",
+            "count": 3
+          },
+          {
+            "label": "09-04",
+            "count": 4
+          },
+          {
+            "label": "09-05",
+            "count": 4
+          },
+          {
+            "label": "09-06",
+            "count": 3
+          },
+          {
+            "label": "09-07",
+            "count": 3
+          },
+          {
+            "label": "09-08",
+            "count": 3
+          },
+          {
+            "label": "09-09",
+            "count": 4
+          },
+          {
+            "label": "09-10",
+            "count": 2
+          },
+          {
+            "label": "09-11",
+            "count": 4
+          },
+          {
+            "label": "09-12",
+            "count": 3
+          },
+          {
+            "label": "09-13",
+            "count": 1
+          },
+          {
+            "label": "09-14",
+            "count": 2
+          },
+          {
+            "label": "09-15",
+            "count": 3
+          },
+          {
+            "label": "09-16",
+            "count": 5
+          },
+          {
+            "label": "09-17",
+            "count": 1
+          },
+          {
+            "label": "09-19",
+            "count": 7
+          },
+          {
+            "label": "09-20",
+            "count": 4
+          },
+          {
+            "label": "09-21",
+            "count": 3
+          },
+          {
+            "label": "09-22",
+            "count": 3
+          },
+          {
+            "label": "09-23",
+            "count": 8
+          },
+          {
+            "label": "09-24",
+            "count": 5
+          },
+          {
+            "label": "09-25",
+            "count": 4
+          },
+          {
+            "label": "09-26",
+            "count": 2
+          },
+          {
+            "label": "09-27",
+            "count": 3
+          },
+          {
+            "label": "09-28",
+            "count": 3
+          },
+          {
+            "label": "10-01",
+            "count": 2
+          },
+          {
+            "label": "10-02",
+            "count": 5
+          },
+          {
+            "label": "10-03",
+            "count": 2
+          },
+          {
+            "label": "10-04",
+            "count": 3
+          },
+          {
+            "label": "10-05",
+            "count": 4
+          },
+          {
+            "label": "10-06",
+            "count": 5
+          },
+          {
+            "label": "10-07",
+            "count": 6
+          },
+          {
+            "label": "10-08",
+            "count": 3
+          },
+          {
+            "label": "10-09",
+            "count": 5
+          },
+          {
+            "label": "10-10",
+            "count": 5
+          },
+          {
+            "label": "10-11",
+            "count": 3
+          },
+          {
+            "label": "10-12",
+            "count": 4
+          },
+          {
+            "label": "10-13",
+            "count": 3
+          },
+          {
+            "label": "10-14",
+            "count": 3
+          },
+          {
+            "label": "10-15",
+            "count": 3
+          },
+          {
+            "label": "10-16",
+            "count": 5
+          },
+          {
+            "label": "10-17",
+            "count": 2
+          },
+          {
+            "label": "10-18",
+            "count": 2
+          },
+          {
+            "label": "10-19",
+            "count": 3
+          },
+          {
+            "label": "10-20",
+            "count": 2
+          },
+          {
+            "label": "10-21",
+            "count": 6
+          },
+          {
+            "label": "10-22",
+            "count": 6
+          },
+          {
+            "label": "10-23",
+            "count": 2
+          },
+          {
+            "label": "10-24",
+            "count": 6
+          },
+          {
+            "label": "10-25",
+            "count": 3
+          },
+          {
+            "label": "10-26",
+            "count": 5
+          },
+          {
+            "label": "10-27",
+            "count": 4
+          },
+          {
+            "label": "10-28",
+            "count": 3
+          },
+          {
+            "label": "11-01",
+            "count": 5
+          },
+          {
+            "label": "11-02",
+            "count": 4
+          },
+          {
+            "label": "11-03",
+            "count": 1
+          },
+          {
+            "label": "11-04",
+            "count": 7
+          },
+          {
+            "label": "11-05",
+            "count": 4
+          },
+          {
+            "label": "11-06",
+            "count": 4
+          },
+          {
+            "label": "11-08",
+            "count": 5
+          },
+          {
+            "label": "11-09",
+            "count": 3
+          },
+          {
+            "label": "11-10",
+            "count": 5
+          },
+          {
+            "label": "11-11",
+            "count": 5
+          },
+          {
+            "label": "11-12",
+            "count": 1
+          },
+          {
+            "label": "11-13",
+            "count": 3
+          },
+          {
+            "label": "11-14",
+            "count": 3
+          },
+          {
+            "label": "11-15",
+            "count": 1
+          },
+          {
+            "label": "11-16",
+            "count": 4
+          },
+          {
+            "label": "11-17",
+            "count": 5
+          },
+          {
+            "label": "11-18",
+            "count": 3
+          },
+          {
+            "label": "11-19",
+            "count": 2
+          },
+          {
+            "label": "11-20",
+            "count": 4
+          },
+          {
+            "label": "11-21",
+            "count": 5
+          },
+          {
+            "label": "11-22",
+            "count": 4
+          },
+          {
+            "label": "11-23",
+            "count": 4
+          },
+          {
+            "label": "11-24",
+            "count": 2
+          },
+          {
+            "label": "11-25",
+            "count": 4
+          },
+          {
+            "label": "11-26",
+            "count": 4
+          },
+          {
+            "label": "11-27",
+            "count": 6
+          },
+          {
+            "label": "11-28",
+            "count": 2
+          },
+          {
+            "label": "12-01",
+            "count": 4
+          },
+          {
+            "label": "12-02",
+            "count": 2
+          },
+          {
+            "label": "12-03",
+            "count": 7
+          },
+          {
+            "label": "12-04",
+            "count": 3
+          },
+          {
+            "label": "12-05",
+            "count": 1
+          },
+          {
+            "label": "12-06",
+            "count": 7
+          },
+          {
+            "label": "12-07",
+            "count": 2
+          },
+          {
+            "label": "12-08",
+            "count": 5
+          },
+          {
+            "label": "12-09",
+            "count": 2
+          },
+          {
+            "label": "12-10",
+            "count": 3
+          },
+          {
+            "label": "12-11",
+            "count": 3
+          },
+          {
+            "label": "12-12",
+            "count": 3
+          },
+          {
+            "label": "12-13",
+            "count": 3
+          },
+          {
+            "label": "12-14",
+            "count": 7
+          },
+          {
+            "label": "12-15",
+            "count": 2
+          },
+          {
+            "label": "12-16",
+            "count": 9
+          },
+          {
+            "label": "12-17",
+            "count": 5
+          },
+          {
+            "label": "12-18",
+            "count": 2
+          },
+          {
+            "label": "12-19",
+            "count": 4
+          },
+          {
+            "label": "12-20",
+            "count": 2
+          },
+          {
+            "label": "12-21",
+            "count": 4
+          },
+          {
+            "label": "12-22",
+            "count": 5
+          },
+          {
+            "label": "12-23",
+            "count": 5
+          },
+          {
+            "label": "12-24",
+            "count": 4
+          },
+          {
+            "label": "12-25",
+            "count": 6
+          },
+          {
+            "label": "12-26",
+            "count": 3
+          },
+          {
+            "label": "12-27",
+            "count": 1
+          },
+          {
+            "label": "12-28",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "field": "country",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 6,
+        "min": "DE",
+        "max": "PT",
+        "issues": [],
+        "topk": [
+          {
+            "label": "FR",
+            "count": 218
+          },
+          {
+            "label": "GR",
+            "count": 204
+          },
+          {
+            "label": "ES",
+            "count": 199
+          },
+          {
+            "label": "DE",
+            "count": 196
+          },
+          {
+            "label": "PT",
+            "count": 194
+          },
+          {
+            "label": "IT",
+            "count": 189
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "segment",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "consumer",
+        "max": "smb",
+        "issues": [],
+        "topk": [
+          {
+            "label": "consumer",
+            "count": 314
+          },
+          {
+            "label": "mid_market",
+            "count": 310
+          },
+          {
+            "label": "enterprise",
+            "count": 291
+          },
+          {
+            "label": "smb",
+            "count": 285
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "email",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1200,
+        "min": "user1000@example.com",
+        "max": "user9@example.com",
+        "issues": [],
+        "topk": [
+          {
+            "label": "user1@example.com",
+            "count": 1
+          },
+          {
+            "label": "user2@example.com",
+            "count": 1
+          },
+          {
+            "label": "user3@example.com",
+            "count": 1
+          },
+          {
+            "label": "user4@example.com",
+            "count": 1
+          },
+          {
+            "label": "user5@example.com",
+            "count": 1
+          },
+          {
+            "label": "user6@example.com",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "marketing_consent",
+        "declaredType": "boolean",
+        "observedType": "BOOLEAN",
+        "missingPct": 0,
+        "distinct": 2,
+        "min": "false",
+        "max": "true",
+        "issues": []
+      }
+    ],
+    "health": 100,
+    "worst": "good",
+    "profiledAt": "2026-08-05T21:16:39.021Z"
+  },
+  "raw_events": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:s3,orrery.raw_events,PROD)",
+    "rows": 9000,
+    "columns": [
+      {
+        "field": "event_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 9000,
+        "min": "E0000001",
+        "max": "E0009000",
+        "issues": [],
+        "topk": [
+          {
+            "label": "E0000001",
+            "count": 1
+          },
+          {
+            "label": "E0000002",
+            "count": 1
+          },
+          {
+            "label": "E0000003",
+            "count": 1
+          },
+          {
+            "label": "E0000004",
+            "count": 1
+          },
+          {
+            "label": "E0000005",
+            "count": 1
+          },
+          {
+            "label": "E0000006",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "customer_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1183,
+        "min": "C00001",
+        "max": "C01200",
+        "issues": [],
+        "topk": [
+          {
+            "label": "C00147",
+            "count": 23
+          },
+          {
+            "label": "C00029",
+            "count": 21
+          },
+          {
+            "label": "C00477",
+            "count": 20
+          },
+          {
+            "label": "C00580",
+            "count": 20
+          },
+          {
+            "label": "C00494",
+            "count": 20
+          },
+          {
+            "label": "C00560",
+            "count": 19
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "event_type",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 5,
+        "min": "add_to_cart",
+        "max": "support_ticket",
+        "issues": [],
+        "topk": [
+          {
+            "label": "page_view",
+            "count": 1853
+          },
+          {
+            "label": "support_ticket",
+            "count": 1840
+          },
+          {
+            "label": "add_to_cart",
+            "count": 1784
+          },
+          {
+            "label": "checkout",
+            "count": 1779
+          },
+          {
+            "label": "refund_request",
+            "count": 1744
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "event_ts",
+        "declaredType": "timestamp",
+        "observedType": "TIMESTAMP WITH TIME ZONE",
+        "missingPct": 0,
+        "distinct": 5229,
+        "min": "1782864393000",
+        "max": "1785540816000",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "07-01",
+            "count": 326
+          },
+          {
+            "label": "07-02",
+            "count": 311
+          },
+          {
+            "label": "07-03",
+            "count": 279
+          },
+          {
+            "label": "07-04",
+            "count": 256
+          },
+          {
+            "label": "07-05",
+            "count": 336
+          },
+          {
+            "label": "07-06",
+            "count": 284
+          },
+          {
+            "label": "07-07",
+            "count": 345
+          },
+          {
+            "label": "07-08",
+            "count": 254
+          },
+          {
+            "label": "07-09",
+            "count": 296
+          },
+          {
+            "label": "07-10",
+            "count": 271
+          },
+          {
+            "label": "07-11",
+            "count": 286
+          },
+          {
+            "label": "07-12",
+            "count": 268
+          },
+          {
+            "label": "07-13",
+            "count": 294
+          },
+          {
+            "label": "07-14",
+            "count": 295
+          },
+          {
+            "label": "07-15",
+            "count": 314
+          },
+          {
+            "label": "07-16",
+            "count": 279
+          },
+          {
+            "label": "07-17",
+            "count": 255
+          },
+          {
+            "label": "07-18",
+            "count": 271
+          },
+          {
+            "label": "07-19",
+            "count": 319
+          },
+          {
+            "label": "07-20",
+            "count": 264
+          },
+          {
+            "label": "07-21",
+            "count": 275
+          },
+          {
+            "label": "07-22",
+            "count": 306
+          },
+          {
+            "label": "07-23",
+            "count": 297
+          },
+          {
+            "label": "07-24",
+            "count": 279
+          },
+          {
+            "label": "07-25",
+            "count": 283
+          },
+          {
+            "label": "07-26",
+            "count": 307
+          },
+          {
+            "label": "07-27",
+            "count": 286
+          },
+          {
+            "label": "07-28",
+            "count": 275
+          },
+          {
+            "label": "07-29",
+            "count": 303
+          },
+          {
+            "label": "07-30",
+            "count": 306
+          },
+          {
+            "label": "07-31",
+            "count": 280
+          }
+        ]
+      },
+      {
+        "field": "session_minutes",
+        "declaredType": "double",
+        "observedType": "DOUBLE",
+        "missingPct": 0,
+        "distinct": 421,
+        "min": "0",
+        "max": "42",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 764
+          },
+          {
+            "label": "bin 1",
+            "count": 763
+          },
+          {
+            "label": "bin 2",
+            "count": 765
+          },
+          {
+            "label": "bin 3",
+            "count": 753
+          },
+          {
+            "label": "bin 4",
+            "count": 754
+          },
+          {
+            "label": "bin 5",
+            "count": 761
+          },
+          {
+            "label": "bin 6",
+            "count": 667
+          },
+          {
+            "label": "bin 7",
+            "count": 749
+          },
+          {
+            "label": "bin 8",
+            "count": 781
+          },
+          {
+            "label": "bin 9",
+            "count": 743
+          },
+          {
+            "label": "bin 10",
+            "count": 726
+          },
+          {
+            "label": "bin 11",
+            "count": 774
+          }
+        ]
+      },
+      {
+        "field": "device",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "android",
+        "max": "tablet",
+        "issues": [],
+        "topk": [
+          {
+            "label": "ios",
+            "count": 2335
+          },
+          {
+            "label": "android",
+            "count": 2319
+          },
+          {
+            "label": "tablet",
+            "count": 2181
+          },
+          {
+            "label": "desktop",
+            "count": 2165
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      }
+    ],
+    "health": 100,
+    "worst": "good",
+    "profiledAt": "2026-08-05T21:16:39.225Z"
+  },
+  "stg_orders": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_orders,PROD)",
+    "rows": 4670,
+    "columns": [
+      {
+        "field": "order_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4670,
+        "min": "O000001",
+        "max": "O005000",
+        "issues": [],
+        "topk": [
+          {
+            "label": "O000001",
+            "count": 1
+          },
+          {
+            "label": "O000002",
+            "count": 1
+          },
+          {
+            "label": "O000003",
+            "count": 1
+          },
+          {
+            "label": "O000004",
+            "count": 1
+          },
+          {
+            "label": "O000005",
+            "count": 1
+          },
+          {
+            "label": "O000006",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "customer_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1177,
+        "min": "C00001",
+        "max": "C01200",
+        "issues": [],
+        "topk": [
+          {
+            "label": "C00560",
+            "count": 13
+          },
+          {
+            "label": "C01163",
+            "count": 11
+          },
+          {
+            "label": "C00611",
+            "count": 10
+          },
+          {
+            "label": "C01003",
+            "count": 10
+          },
+          {
+            "label": "C00206",
+            "count": 10
+          },
+          {
+            "label": "C00548",
+            "count": 10
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "order_ts",
+        "declaredType": "timestamp",
+        "observedType": "TIMESTAMP WITH TIME ZONE",
+        "missingPct": 0,
+        "distinct": 4666,
+        "min": "1782864065000",
+        "max": "1785542368000",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "07-01",
+            "count": 180
+          },
+          {
+            "label": "07-02",
+            "count": 156
+          },
+          {
+            "label": "07-03",
+            "count": 139
+          },
+          {
+            "label": "07-04",
+            "count": 139
+          },
+          {
+            "label": "07-05",
+            "count": 152
+          },
+          {
+            "label": "07-06",
+            "count": 166
+          },
+          {
+            "label": "07-07",
+            "count": 174
+          },
+          {
+            "label": "07-08",
+            "count": 142
+          },
+          {
+            "label": "07-09",
+            "count": 146
+          },
+          {
+            "label": "07-10",
+            "count": 155
+          },
+          {
+            "label": "07-11",
+            "count": 162
+          },
+          {
+            "label": "07-12",
+            "count": 137
+          },
+          {
+            "label": "07-13",
+            "count": 151
+          },
+          {
+            "label": "07-14",
+            "count": 160
+          },
+          {
+            "label": "07-15",
+            "count": 176
+          },
+          {
+            "label": "07-16",
+            "count": 144
+          },
+          {
+            "label": "07-17",
+            "count": 150
+          },
+          {
+            "label": "07-18",
+            "count": 142
+          },
+          {
+            "label": "07-19",
+            "count": 163
+          },
+          {
+            "label": "07-20",
+            "count": 145
+          },
+          {
+            "label": "07-21",
+            "count": 130
+          },
+          {
+            "label": "07-22",
+            "count": 142
+          },
+          {
+            "label": "07-23",
+            "count": 152
+          },
+          {
+            "label": "07-24",
+            "count": 127
+          },
+          {
+            "label": "07-25",
+            "count": 136
+          },
+          {
+            "label": "07-26",
+            "count": 144
+          },
+          {
+            "label": "07-27",
+            "count": 167
+          },
+          {
+            "label": "07-28",
+            "count": 143
+          },
+          {
+            "label": "07-29",
+            "count": 154
+          },
+          {
+            "label": "07-30",
+            "count": 137
+          },
+          {
+            "label": "07-31",
+            "count": 159
+          }
+        ]
+      },
+      {
+        "field": "channel",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "mobile",
+        "max": "web",
+        "issues": [],
+        "topk": [
+          {
+            "label": "web",
+            "count": 1210
+          },
+          {
+            "label": "mobile",
+            "count": 1172
+          },
+          {
+            "label": "store",
+            "count": 1149
+          },
+          {
+            "label": "partner",
+            "count": 1139
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "amount_eur",
+        "declaredType": "double",
+        "observedType": "DOUBLE",
+        "missingPct": 0,
+        "distinct": 4440,
+        "min": "5",
+        "max": "499.91",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 426
+          },
+          {
+            "label": "bin 1",
+            "count": 379
+          },
+          {
+            "label": "bin 2",
+            "count": 380
+          },
+          {
+            "label": "bin 3",
+            "count": 364
+          },
+          {
+            "label": "bin 4",
+            "count": 387
+          },
+          {
+            "label": "bin 5",
+            "count": 419
+          },
+          {
+            "label": "bin 6",
+            "count": 389
+          },
+          {
+            "label": "bin 7",
+            "count": 355
+          },
+          {
+            "label": "bin 8",
+            "count": 386
+          },
+          {
+            "label": "bin 9",
+            "count": 401
+          },
+          {
+            "label": "bin 10",
+            "count": 373
+          },
+          {
+            "label": "bin 11",
+            "count": 411
+          }
+        ]
+      },
+      {
+        "field": "items",
+        "declaredType": "long",
+        "observedType": "BIGINT",
+        "missingPct": 0,
+        "distinct": 6,
+        "min": "1",
+        "max": "6",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 801
+          },
+          {
+            "label": "bin 2",
+            "count": 763
+          },
+          {
+            "label": "bin 4",
+            "count": 799
+          },
+          {
+            "label": "bin 7",
+            "count": 752
+          },
+          {
+            "label": "bin 9",
+            "count": 775
+          },
+          {
+            "label": "bin 11",
+            "count": 780
+          }
+        ]
+      },
+      {
+        "field": "status",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1,
+        "min": "completed",
+        "max": "completed",
+        "issues": [],
+        "topk": [
+          {
+            "label": "completed",
+            "count": 4670
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "amount_eur_net",
+        "declaredType": "double",
+        "observedType": "DOUBLE",
+        "missingPct": 0,
+        "distinct": 4348,
+        "min": "3.95",
+        "max": "394.93",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 426
+          },
+          {
+            "label": "bin 1",
+            "count": 379
+          },
+          {
+            "label": "bin 2",
+            "count": 380
+          },
+          {
+            "label": "bin 3",
+            "count": 364
+          },
+          {
+            "label": "bin 4",
+            "count": 387
+          },
+          {
+            "label": "bin 5",
+            "count": 419
+          },
+          {
+            "label": "bin 6",
+            "count": 389
+          },
+          {
+            "label": "bin 7",
+            "count": 355
+          },
+          {
+            "label": "bin 8",
+            "count": 386
+          },
+          {
+            "label": "bin 9",
+            "count": 401
+          },
+          {
+            "label": "bin 10",
+            "count": 373
+          },
+          {
+            "label": "bin 11",
+            "count": 411
+          }
+        ]
+      }
+    ],
+    "health": 100,
+    "worst": "good",
+    "profiledAt": "2026-08-05T21:16:39.416Z"
+  },
+  "stg_customers": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
+    "rows": 1200,
+    "columns": [
+      {
+        "field": "customer_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1200,
+        "min": "C00001",
+        "max": "C01200",
+        "issues": [],
+        "topk": [
+          {
+            "label": "C00001",
+            "count": 1
+          },
+          {
+            "label": "C00002",
+            "count": 1
+          },
+          {
+            "label": "C00003",
+            "count": 1
+          },
+          {
+            "label": "C00004",
+            "count": 1
+          },
+          {
+            "label": "C00005",
+            "count": 1
+          },
+          {
+            "label": "C00006",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "signup_date",
+        "declaredType": "date",
+        "observedType": "DATE",
+        "missingPct": 0,
+        "distinct": 327,
+        "min": "1735689600000",
+        "max": "1766880000000",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "01-01",
+            "count": 5
+          },
+          {
+            "label": "01-02",
+            "count": 5
+          },
+          {
+            "label": "01-04",
+            "count": 7
+          },
+          {
+            "label": "01-05",
+            "count": 2
+          },
+          {
+            "label": "01-06",
+            "count": 3
+          },
+          {
+            "label": "01-07",
+            "count": 1
+          },
+          {
+            "label": "01-08",
+            "count": 4
+          },
+          {
+            "label": "01-09",
+            "count": 5
+          },
+          {
+            "label": "01-10",
+            "count": 2
+          },
+          {
+            "label": "01-11",
+            "count": 4
+          },
+          {
+            "label": "01-12",
+            "count": 5
+          },
+          {
+            "label": "01-13",
+            "count": 5
+          },
+          {
+            "label": "01-14",
+            "count": 3
+          },
+          {
+            "label": "01-15",
+            "count": 8
+          },
+          {
+            "label": "01-16",
+            "count": 2
+          },
+          {
+            "label": "01-17",
+            "count": 1
+          },
+          {
+            "label": "01-18",
+            "count": 7
+          },
+          {
+            "label": "01-19",
+            "count": 2
+          },
+          {
+            "label": "01-20",
+            "count": 2
+          },
+          {
+            "label": "01-21",
+            "count": 3
+          },
+          {
+            "label": "01-22",
+            "count": 7
+          },
+          {
+            "label": "01-23",
+            "count": 4
+          },
+          {
+            "label": "01-24",
+            "count": 4
+          },
+          {
+            "label": "01-25",
+            "count": 5
+          },
+          {
+            "label": "01-26",
+            "count": 1
+          },
+          {
+            "label": "01-27",
+            "count": 1
+          },
+          {
+            "label": "01-28",
+            "count": 3
+          },
+          {
+            "label": "02-01",
+            "count": 5
+          },
+          {
+            "label": "02-02",
+            "count": 3
+          },
+          {
+            "label": "02-03",
+            "count": 3
+          },
+          {
+            "label": "02-04",
+            "count": 2
+          },
+          {
+            "label": "02-05",
+            "count": 3
+          },
+          {
+            "label": "02-06",
+            "count": 1
+          },
+          {
+            "label": "02-07",
+            "count": 10
+          },
+          {
+            "label": "02-08",
+            "count": 2
+          },
+          {
+            "label": "02-09",
+            "count": 3
+          },
+          {
+            "label": "02-10",
+            "count": 2
+          },
+          {
+            "label": "02-11",
+            "count": 5
+          },
+          {
+            "label": "02-12",
+            "count": 2
+          },
+          {
+            "label": "02-13",
+            "count": 3
+          },
+          {
+            "label": "02-14",
+            "count": 9
+          },
+          {
+            "label": "02-15",
+            "count": 5
+          },
+          {
+            "label": "02-16",
+            "count": 7
+          },
+          {
+            "label": "02-17",
+            "count": 3
+          },
+          {
+            "label": "02-18",
+            "count": 2
+          },
+          {
+            "label": "02-19",
+            "count": 7
+          },
+          {
+            "label": "02-20",
+            "count": 3
+          },
+          {
+            "label": "02-21",
+            "count": 4
+          },
+          {
+            "label": "02-22",
+            "count": 4
+          },
+          {
+            "label": "02-23",
+            "count": 3
+          },
+          {
+            "label": "02-24",
+            "count": 3
+          },
+          {
+            "label": "02-25",
+            "count": 4
+          },
+          {
+            "label": "02-26",
+            "count": 6
+          },
+          {
+            "label": "02-27",
+            "count": 2
+          },
+          {
+            "label": "02-28",
+            "count": 6
+          },
+          {
+            "label": "03-01",
+            "count": 2
+          },
+          {
+            "label": "03-02",
+            "count": 6
+          },
+          {
+            "label": "03-03",
+            "count": 5
+          },
+          {
+            "label": "03-04",
+            "count": 5
+          },
+          {
+            "label": "03-05",
+            "count": 6
+          },
+          {
+            "label": "03-06",
+            "count": 4
+          },
+          {
+            "label": "03-07",
+            "count": 2
+          },
+          {
+            "label": "03-08",
+            "count": 1
+          },
+          {
+            "label": "03-09",
+            "count": 2
+          },
+          {
+            "label": "03-10",
+            "count": 4
+          },
+          {
+            "label": "03-11",
+            "count": 3
+          },
+          {
+            "label": "03-12",
+            "count": 5
+          },
+          {
+            "label": "03-13",
+            "count": 5
+          },
+          {
+            "label": "03-14",
+            "count": 3
+          },
+          {
+            "label": "03-15",
+            "count": 2
+          },
+          {
+            "label": "03-16",
+            "count": 2
+          },
+          {
+            "label": "03-17",
+            "count": 5
+          },
+          {
+            "label": "03-18",
+            "count": 2
+          },
+          {
+            "label": "03-19",
+            "count": 4
+          },
+          {
+            "label": "03-20",
+            "count": 3
+          },
+          {
+            "label": "03-21",
+            "count": 1
+          },
+          {
+            "label": "03-22",
+            "count": 2
+          },
+          {
+            "label": "03-23",
+            "count": 3
+          },
+          {
+            "label": "03-24",
+            "count": 5
+          },
+          {
+            "label": "03-26",
+            "count": 2
+          },
+          {
+            "label": "03-27",
+            "count": 2
+          },
+          {
+            "label": "03-28",
+            "count": 1
+          },
+          {
+            "label": "04-01",
+            "count": 6
+          },
+          {
+            "label": "04-02",
+            "count": 1
+          },
+          {
+            "label": "04-03",
+            "count": 5
+          },
+          {
+            "label": "04-04",
+            "count": 3
+          },
+          {
+            "label": "04-05",
+            "count": 3
+          },
+          {
+            "label": "04-06",
+            "count": 3
+          },
+          {
+            "label": "04-07",
+            "count": 3
+          },
+          {
+            "label": "04-08",
+            "count": 3
+          },
+          {
+            "label": "04-09",
+            "count": 2
+          },
+          {
+            "label": "04-10",
+            "count": 3
+          },
+          {
+            "label": "04-11",
+            "count": 3
+          },
+          {
+            "label": "04-12",
+            "count": 3
+          },
+          {
+            "label": "04-13",
+            "count": 3
+          },
+          {
+            "label": "04-14",
+            "count": 2
+          },
+          {
+            "label": "04-16",
+            "count": 5
+          },
+          {
+            "label": "04-17",
+            "count": 5
+          },
+          {
+            "label": "04-18",
+            "count": 3
+          },
+          {
+            "label": "04-19",
+            "count": 4
+          },
+          {
+            "label": "04-20",
+            "count": 3
+          },
+          {
+            "label": "04-21",
+            "count": 3
+          },
+          {
+            "label": "04-22",
+            "count": 1
+          },
+          {
+            "label": "04-23",
+            "count": 3
+          },
+          {
+            "label": "04-24",
+            "count": 8
+          },
+          {
+            "label": "04-25",
+            "count": 9
+          },
+          {
+            "label": "04-26",
+            "count": 4
+          },
+          {
+            "label": "04-27",
+            "count": 2
+          },
+          {
+            "label": "04-28",
+            "count": 3
+          },
+          {
+            "label": "05-01",
+            "count": 1
+          },
+          {
+            "label": "05-02",
+            "count": 2
+          },
+          {
+            "label": "05-03",
+            "count": 6
+          },
+          {
+            "label": "05-04",
+            "count": 3
+          },
+          {
+            "label": "05-05",
+            "count": 4
+          },
+          {
+            "label": "05-06",
+            "count": 3
+          },
+          {
+            "label": "05-07",
+            "count": 4
+          },
+          {
+            "label": "05-08",
+            "count": 3
+          },
+          {
+            "label": "05-09",
+            "count": 4
+          },
+          {
+            "label": "05-10",
+            "count": 4
+          },
+          {
+            "label": "05-11",
+            "count": 7
+          },
+          {
+            "label": "05-12",
+            "count": 3
+          },
+          {
+            "label": "05-13",
+            "count": 2
+          },
+          {
+            "label": "05-14",
+            "count": 2
+          },
+          {
+            "label": "05-15",
+            "count": 6
+          },
+          {
+            "label": "05-17",
+            "count": 1
+          },
+          {
+            "label": "05-18",
+            "count": 5
+          },
+          {
+            "label": "05-19",
+            "count": 3
+          },
+          {
+            "label": "05-21",
+            "count": 6
+          },
+          {
+            "label": "05-22",
+            "count": 3
+          },
+          {
+            "label": "05-23",
+            "count": 1
+          },
+          {
+            "label": "05-24",
+            "count": 2
+          },
+          {
+            "label": "05-25",
+            "count": 2
+          },
+          {
+            "label": "05-26",
+            "count": 3
+          },
+          {
+            "label": "05-27",
+            "count": 3
+          },
+          {
+            "label": "05-28",
+            "count": 3
+          },
+          {
+            "label": "06-01",
+            "count": 2
+          },
+          {
+            "label": "06-02",
+            "count": 3
+          },
+          {
+            "label": "06-03",
+            "count": 5
+          },
+          {
+            "label": "06-04",
+            "count": 3
+          },
+          {
+            "label": "06-05",
+            "count": 5
+          },
+          {
+            "label": "06-06",
+            "count": 8
+          },
+          {
+            "label": "06-07",
+            "count": 4
+          },
+          {
+            "label": "06-08",
+            "count": 4
+          },
+          {
+            "label": "06-09",
+            "count": 3
+          },
+          {
+            "label": "06-10",
+            "count": 4
+          },
+          {
+            "label": "06-11",
+            "count": 6
+          },
+          {
+            "label": "06-12",
+            "count": 2
+          },
+          {
+            "label": "06-13",
+            "count": 1
+          },
+          {
+            "label": "06-14",
+            "count": 5
+          },
+          {
+            "label": "06-15",
+            "count": 5
+          },
+          {
+            "label": "06-16",
+            "count": 4
+          },
+          {
+            "label": "06-17",
+            "count": 1
+          },
+          {
+            "label": "06-18",
+            "count": 1
+          },
+          {
+            "label": "06-19",
+            "count": 4
+          },
+          {
+            "label": "06-20",
+            "count": 3
+          },
+          {
+            "label": "06-21",
+            "count": 6
+          },
+          {
+            "label": "06-22",
+            "count": 1
+          },
+          {
+            "label": "06-23",
+            "count": 5
+          },
+          {
+            "label": "06-24",
+            "count": 6
+          },
+          {
+            "label": "06-25",
+            "count": 1
+          },
+          {
+            "label": "06-26",
+            "count": 4
+          },
+          {
+            "label": "06-27",
+            "count": 6
+          },
+          {
+            "label": "06-28",
+            "count": 3
+          },
+          {
+            "label": "07-01",
+            "count": 1
+          },
+          {
+            "label": "07-02",
+            "count": 3
+          },
+          {
+            "label": "07-03",
+            "count": 10
+          },
+          {
+            "label": "07-04",
+            "count": 8
+          },
+          {
+            "label": "07-05",
+            "count": 4
+          },
+          {
+            "label": "07-06",
+            "count": 4
+          },
+          {
+            "label": "07-07",
+            "count": 4
+          },
+          {
+            "label": "07-08",
+            "count": 3
+          },
+          {
+            "label": "07-09",
+            "count": 5
+          },
+          {
+            "label": "07-10",
+            "count": 6
+          },
+          {
+            "label": "07-11",
+            "count": 3
+          },
+          {
+            "label": "07-12",
+            "count": 5
+          },
+          {
+            "label": "07-13",
+            "count": 7
+          },
+          {
+            "label": "07-14",
+            "count": 4
+          },
+          {
+            "label": "07-15",
+            "count": 4
+          },
+          {
+            "label": "07-16",
+            "count": 6
+          },
+          {
+            "label": "07-17",
+            "count": 6
+          },
+          {
+            "label": "07-18",
+            "count": 2
+          },
+          {
+            "label": "07-19",
+            "count": 3
+          },
+          {
+            "label": "07-20",
+            "count": 2
+          },
+          {
+            "label": "07-21",
+            "count": 4
+          },
+          {
+            "label": "07-22",
+            "count": 3
+          },
+          {
+            "label": "07-23",
+            "count": 4
+          },
+          {
+            "label": "07-24",
+            "count": 2
+          },
+          {
+            "label": "07-25",
+            "count": 2
+          },
+          {
+            "label": "07-26",
+            "count": 5
+          },
+          {
+            "label": "07-27",
+            "count": 2
+          },
+          {
+            "label": "07-28",
+            "count": 7
+          },
+          {
+            "label": "08-01",
+            "count": 3
+          },
+          {
+            "label": "08-02",
+            "count": 5
+          },
+          {
+            "label": "08-03",
+            "count": 3
+          },
+          {
+            "label": "08-04",
+            "count": 4
+          },
+          {
+            "label": "08-05",
+            "count": 5
+          },
+          {
+            "label": "08-06",
+            "count": 1
+          },
+          {
+            "label": "08-07",
+            "count": 2
+          },
+          {
+            "label": "08-08",
+            "count": 3
+          },
+          {
+            "label": "08-09",
+            "count": 1
+          },
+          {
+            "label": "08-11",
+            "count": 3
+          },
+          {
+            "label": "08-12",
+            "count": 4
+          },
+          {
+            "label": "08-13",
+            "count": 2
+          },
+          {
+            "label": "08-14",
+            "count": 2
+          },
+          {
+            "label": "08-15",
+            "count": 2
+          },
+          {
+            "label": "08-17",
+            "count": 5
+          },
+          {
+            "label": "08-18",
+            "count": 5
+          },
+          {
+            "label": "08-19",
+            "count": 8
+          },
+          {
+            "label": "08-20",
+            "count": 4
+          },
+          {
+            "label": "08-21",
+            "count": 2
+          },
+          {
+            "label": "08-22",
+            "count": 2
+          },
+          {
+            "label": "08-23",
+            "count": 3
+          },
+          {
+            "label": "08-24",
+            "count": 2
+          },
+          {
+            "label": "08-25",
+            "count": 4
+          },
+          {
+            "label": "08-26",
+            "count": 6
+          },
+          {
+            "label": "08-27",
+            "count": 3
+          },
+          {
+            "label": "08-28",
+            "count": 2
+          },
+          {
+            "label": "09-01",
+            "count": 5
+          },
+          {
+            "label": "09-02",
+            "count": 5
+          },
+          {
+            "label": "09-03",
+            "count": 3
+          },
+          {
+            "label": "09-04",
+            "count": 4
+          },
+          {
+            "label": "09-05",
+            "count": 4
+          },
+          {
+            "label": "09-06",
+            "count": 3
+          },
+          {
+            "label": "09-07",
+            "count": 3
+          },
+          {
+            "label": "09-08",
+            "count": 3
+          },
+          {
+            "label": "09-09",
+            "count": 4
+          },
+          {
+            "label": "09-10",
+            "count": 2
+          },
+          {
+            "label": "09-11",
+            "count": 4
+          },
+          {
+            "label": "09-12",
+            "count": 3
+          },
+          {
+            "label": "09-13",
+            "count": 1
+          },
+          {
+            "label": "09-14",
+            "count": 2
+          },
+          {
+            "label": "09-15",
+            "count": 3
+          },
+          {
+            "label": "09-16",
+            "count": 5
+          },
+          {
+            "label": "09-17",
+            "count": 1
+          },
+          {
+            "label": "09-19",
+            "count": 7
+          },
+          {
+            "label": "09-20",
+            "count": 4
+          },
+          {
+            "label": "09-21",
+            "count": 3
+          },
+          {
+            "label": "09-22",
+            "count": 3
+          },
+          {
+            "label": "09-23",
+            "count": 8
+          },
+          {
+            "label": "09-24",
+            "count": 5
+          },
+          {
+            "label": "09-25",
+            "count": 4
+          },
+          {
+            "label": "09-26",
+            "count": 2
+          },
+          {
+            "label": "09-27",
+            "count": 3
+          },
+          {
+            "label": "09-28",
+            "count": 3
+          },
+          {
+            "label": "10-01",
+            "count": 2
+          },
+          {
+            "label": "10-02",
+            "count": 5
+          },
+          {
+            "label": "10-03",
+            "count": 2
+          },
+          {
+            "label": "10-04",
+            "count": 3
+          },
+          {
+            "label": "10-05",
+            "count": 4
+          },
+          {
+            "label": "10-06",
+            "count": 5
+          },
+          {
+            "label": "10-07",
+            "count": 6
+          },
+          {
+            "label": "10-08",
+            "count": 3
+          },
+          {
+            "label": "10-09",
+            "count": 5
+          },
+          {
+            "label": "10-10",
+            "count": 5
+          },
+          {
+            "label": "10-11",
+            "count": 3
+          },
+          {
+            "label": "10-12",
+            "count": 4
+          },
+          {
+            "label": "10-13",
+            "count": 3
+          },
+          {
+            "label": "10-14",
+            "count": 3
+          },
+          {
+            "label": "10-15",
+            "count": 3
+          },
+          {
+            "label": "10-16",
+            "count": 5
+          },
+          {
+            "label": "10-17",
+            "count": 2
+          },
+          {
+            "label": "10-18",
+            "count": 2
+          },
+          {
+            "label": "10-19",
+            "count": 3
+          },
+          {
+            "label": "10-20",
+            "count": 2
+          },
+          {
+            "label": "10-21",
+            "count": 6
+          },
+          {
+            "label": "10-22",
+            "count": 6
+          },
+          {
+            "label": "10-23",
+            "count": 2
+          },
+          {
+            "label": "10-24",
+            "count": 6
+          },
+          {
+            "label": "10-25",
+            "count": 3
+          },
+          {
+            "label": "10-26",
+            "count": 5
+          },
+          {
+            "label": "10-27",
+            "count": 4
+          },
+          {
+            "label": "10-28",
+            "count": 3
+          },
+          {
+            "label": "11-01",
+            "count": 5
+          },
+          {
+            "label": "11-02",
+            "count": 4
+          },
+          {
+            "label": "11-03",
+            "count": 1
+          },
+          {
+            "label": "11-04",
+            "count": 7
+          },
+          {
+            "label": "11-05",
+            "count": 4
+          },
+          {
+            "label": "11-06",
+            "count": 4
+          },
+          {
+            "label": "11-08",
+            "count": 5
+          },
+          {
+            "label": "11-09",
+            "count": 3
+          },
+          {
+            "label": "11-10",
+            "count": 5
+          },
+          {
+            "label": "11-11",
+            "count": 5
+          },
+          {
+            "label": "11-12",
+            "count": 1
+          },
+          {
+            "label": "11-13",
+            "count": 3
+          },
+          {
+            "label": "11-14",
+            "count": 3
+          },
+          {
+            "label": "11-15",
+            "count": 1
+          },
+          {
+            "label": "11-16",
+            "count": 4
+          },
+          {
+            "label": "11-17",
+            "count": 5
+          },
+          {
+            "label": "11-18",
+            "count": 3
+          },
+          {
+            "label": "11-19",
+            "count": 2
+          },
+          {
+            "label": "11-20",
+            "count": 4
+          },
+          {
+            "label": "11-21",
+            "count": 5
+          },
+          {
+            "label": "11-22",
+            "count": 4
+          },
+          {
+            "label": "11-23",
+            "count": 4
+          },
+          {
+            "label": "11-24",
+            "count": 2
+          },
+          {
+            "label": "11-25",
+            "count": 4
+          },
+          {
+            "label": "11-26",
+            "count": 4
+          },
+          {
+            "label": "11-27",
+            "count": 6
+          },
+          {
+            "label": "11-28",
+            "count": 2
+          },
+          {
+            "label": "12-01",
+            "count": 4
+          },
+          {
+            "label": "12-02",
+            "count": 2
+          },
+          {
+            "label": "12-03",
+            "count": 7
+          },
+          {
+            "label": "12-04",
+            "count": 3
+          },
+          {
+            "label": "12-05",
+            "count": 1
+          },
+          {
+            "label": "12-06",
+            "count": 7
+          },
+          {
+            "label": "12-07",
+            "count": 2
+          },
+          {
+            "label": "12-08",
+            "count": 5
+          },
+          {
+            "label": "12-09",
+            "count": 2
+          },
+          {
+            "label": "12-10",
+            "count": 3
+          },
+          {
+            "label": "12-11",
+            "count": 3
+          },
+          {
+            "label": "12-12",
+            "count": 3
+          },
+          {
+            "label": "12-13",
+            "count": 3
+          },
+          {
+            "label": "12-14",
+            "count": 7
+          },
+          {
+            "label": "12-15",
+            "count": 2
+          },
+          {
+            "label": "12-16",
+            "count": 9
+          },
+          {
+            "label": "12-17",
+            "count": 5
+          },
+          {
+            "label": "12-18",
+            "count": 2
+          },
+          {
+            "label": "12-19",
+            "count": 4
+          },
+          {
+            "label": "12-20",
+            "count": 2
+          },
+          {
+            "label": "12-21",
+            "count": 4
+          },
+          {
+            "label": "12-22",
+            "count": 5
+          },
+          {
+            "label": "12-23",
+            "count": 5
+          },
+          {
+            "label": "12-24",
+            "count": 4
+          },
+          {
+            "label": "12-25",
+            "count": 6
+          },
+          {
+            "label": "12-26",
+            "count": 3
+          },
+          {
+            "label": "12-27",
+            "count": 1
+          },
+          {
+            "label": "12-28",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "field": "country",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 6,
+        "min": "DE",
+        "max": "PT",
+        "issues": [],
+        "topk": [
+          {
+            "label": "FR",
+            "count": 218
+          },
+          {
+            "label": "GR",
+            "count": 204
+          },
+          {
+            "label": "ES",
+            "count": 199
+          },
+          {
+            "label": "DE",
+            "count": 196
+          },
+          {
+            "label": "PT",
+            "count": 194
+          },
+          {
+            "label": "IT",
+            "count": 189
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "segment",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "consumer",
+        "max": "smb",
+        "issues": [],
+        "topk": [
+          {
+            "label": "consumer",
+            "count": 314
+          },
+          {
+            "label": "mid_market",
+            "count": 310
+          },
+          {
+            "label": "enterprise",
+            "count": 291
+          },
+          {
+            "label": "smb",
+            "count": 285
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "email",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 13.333333333333334,
+        "distinct": 1040,
+        "min": "user1000@example.com",
+        "max": "user9@example.com",
+        "issues": [
+          {
+            "kind": "missing-spike",
+            "severity": "serious",
+            "message": "13.3% of values are missing or empty."
+          }
+        ],
+        "topk": [
+          {
+            "label": "∅ empty",
+            "count": 160
+          },
+          {
+            "label": "user2@example.com",
+            "count": 1
+          },
+          {
+            "label": "user3@example.com",
+            "count": 1
+          },
+          {
+            "label": "user4@example.com",
+            "count": 1
+          },
+          {
+            "label": "user6@example.com",
+            "count": 1
+          },
+          {
+            "label": "user8@example.com",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 13.333333333333334,
+          "other": 86.66666666666667
+        }
+      },
+      {
+        "field": "marketing_consent",
+        "declaredType": "boolean",
+        "observedType": "BOOLEAN",
+        "missingPct": 0,
+        "distinct": 2,
+        "min": "false",
+        "max": "true",
+        "issues": []
+      },
+      {
+        "field": "is_active",
+        "declaredType": "boolean",
+        "observedType": "BOOLEAN",
+        "missingPct": 0,
+        "distinct": 2,
+        "min": "false",
+        "max": "true",
+        "issues": []
+      }
+    ],
+    "health": 80,
+    "worst": "serious",
+    "profiledAt": "2026-08-05T21:16:39.871Z"
+  },
+  "stg_events": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_events,PROD)",
+    "rows": 9000,
+    "columns": [
+      {
+        "field": "event_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 9000,
+        "min": "E0000001",
+        "max": "E0009000",
+        "issues": [],
+        "topk": [
+          {
+            "label": "E0000001",
+            "count": 1
+          },
+          {
+            "label": "E0000002",
+            "count": 1
+          },
+          {
+            "label": "E0000003",
+            "count": 1
+          },
+          {
+            "label": "E0000004",
+            "count": 1
+          },
+          {
+            "label": "E0000005",
+            "count": 1
+          },
+          {
+            "label": "E0000006",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "customer_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1183,
+        "min": "C00001",
+        "max": "C01200",
+        "issues": [],
+        "topk": [
+          {
+            "label": "C00147",
+            "count": 23
+          },
+          {
+            "label": "C00029",
+            "count": 21
+          },
+          {
+            "label": "C00477",
+            "count": 20
+          },
+          {
+            "label": "C00580",
+            "count": 20
+          },
+          {
+            "label": "C00494",
+            "count": 20
+          },
+          {
+            "label": "C00560",
+            "count": 19
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "event_type",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 5,
+        "min": "add_to_cart",
+        "max": "support_ticket",
+        "issues": [],
+        "topk": [
+          {
+            "label": "page_view",
+            "count": 1853
+          },
+          {
+            "label": "support_ticket",
+            "count": 1840
+          },
+          {
+            "label": "add_to_cart",
+            "count": 1784
+          },
+          {
+            "label": "checkout",
+            "count": 1779
+          },
+          {
+            "label": "refund_request",
+            "count": 1744
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "event_ts",
+        "declaredType": "timestamp",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 5854,
+        "min": "1782867713000",
+        "max": "2026-07-31T23:33:36Z",
+        "issues": [
+          {
+            "kind": "type-drift",
+            "severity": "critical",
+            "message": "Declared timestamp in DataHub, but 9.3% of values are epoch-style numerics — mixed formats broke type inference (observed VARCHAR)."
+          }
+        ],
+        "topk": [
+          {
+            "label": "2026-07-23T02:49:34Z",
+            "count": 4
+          },
+          {
+            "label": "2026-07-17T10:09:01Z",
+            "count": 4
+          },
+          {
+            "label": "2026-07-01T12:23:13Z",
+            "count": 3
+          },
+          {
+            "label": "2026-07-13T18:33:21Z",
+            "count": 3
+          },
+          {
+            "label": "2026-07-07T03:44:12Z",
+            "count": 2
+          },
+          {
+            "label": "2026-07-19T16:41:14Z",
+            "count": 2
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 90.65555555555555,
+          "numeric": 9.344444444444445,
+          "empty": 0,
+          "other": 0
+        }
+      },
+      {
+        "field": "session_minutes",
+        "declaredType": "double",
+        "observedType": "DOUBLE",
+        "missingPct": 0,
+        "distinct": 421,
+        "min": "0",
+        "max": "42",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 764
+          },
+          {
+            "label": "bin 1",
+            "count": 763
+          },
+          {
+            "label": "bin 2",
+            "count": 765
+          },
+          {
+            "label": "bin 3",
+            "count": 753
+          },
+          {
+            "label": "bin 4",
+            "count": 754
+          },
+          {
+            "label": "bin 5",
+            "count": 761
+          },
+          {
+            "label": "bin 6",
+            "count": 667
+          },
+          {
+            "label": "bin 7",
+            "count": 749
+          },
+          {
+            "label": "bin 8",
+            "count": 781
+          },
+          {
+            "label": "bin 9",
+            "count": 743
+          },
+          {
+            "label": "bin 10",
+            "count": 726
+          },
+          {
+            "label": "bin 11",
+            "count": 774
+          }
+        ]
+      },
+      {
+        "field": "device",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "android",
+        "max": "tablet",
+        "issues": [],
+        "topk": [
+          {
+            "label": "ios",
+            "count": 2335
+          },
+          {
+            "label": "android",
+            "count": 2319
+          },
+          {
+            "label": "tablet",
+            "count": 2181
+          },
+          {
+            "label": "desktop",
+            "count": 2165
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      }
+    ],
+    "health": 65,
+    "worst": "critical",
+    "profiledAt": "2026-08-05T21:16:40.076Z"
+  },
+  "fct_revenue_daily": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.fct_revenue_daily,PROD)",
+    "rows": 124,
+    "columns": [
+      {
+        "field": "order_date",
+        "declaredType": "date",
+        "observedType": "DATE",
+        "missingPct": 0,
+        "distinct": 31,
+        "min": "1782864000000",
+        "max": "1785456000000",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "07-01",
+            "count": 4
+          },
+          {
+            "label": "07-02",
+            "count": 4
+          },
+          {
+            "label": "07-03",
+            "count": 4
+          },
+          {
+            "label": "07-04",
+            "count": 4
+          },
+          {
+            "label": "07-05",
+            "count": 4
+          },
+          {
+            "label": "07-06",
+            "count": 4
+          },
+          {
+            "label": "07-07",
+            "count": 4
+          },
+          {
+            "label": "07-08",
+            "count": 4
+          },
+          {
+            "label": "07-09",
+            "count": 4
+          },
+          {
+            "label": "07-10",
+            "count": 4
+          },
+          {
+            "label": "07-11",
+            "count": 4
+          },
+          {
+            "label": "07-12",
+            "count": 4
+          },
+          {
+            "label": "07-13",
+            "count": 4
+          },
+          {
+            "label": "07-14",
+            "count": 4
+          },
+          {
+            "label": "07-15",
+            "count": 4
+          },
+          {
+            "label": "07-16",
+            "count": 4
+          },
+          {
+            "label": "07-17",
+            "count": 4
+          },
+          {
+            "label": "07-18",
+            "count": 4
+          },
+          {
+            "label": "07-19",
+            "count": 4
+          },
+          {
+            "label": "07-20",
+            "count": 4
+          },
+          {
+            "label": "07-21",
+            "count": 4
+          },
+          {
+            "label": "07-22",
+            "count": 4
+          },
+          {
+            "label": "07-23",
+            "count": 4
+          },
+          {
+            "label": "07-24",
+            "count": 4
+          },
+          {
+            "label": "07-25",
+            "count": 4
+          },
+          {
+            "label": "07-26",
+            "count": 4
+          },
+          {
+            "label": "07-27",
+            "count": 4
+          },
+          {
+            "label": "07-28",
+            "count": 4
+          },
+          {
+            "label": "07-29",
+            "count": 4
+          },
+          {
+            "label": "07-30",
+            "count": 4
+          },
+          {
+            "label": "07-31",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "field": "channel",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "mobile",
+        "max": "web",
+        "issues": [],
+        "topk": [
+          {
+            "label": "mobile",
+            "count": 31
+          },
+          {
+            "label": "partner",
+            "count": 31
+          },
+          {
+            "label": "store",
+            "count": 31
+          },
+          {
+            "label": "web",
+            "count": 31
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "orders",
+        "declaredType": "long",
+        "observedType": "BIGINT",
+        "missingPct": 0,
+        "distinct": 27,
+        "min": "25",
+        "max": "56",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 7
+          },
+          {
+            "label": "bin 1",
+            "count": 5
+          },
+          {
+            "label": "bin 2",
+            "count": 9
+          },
+          {
+            "label": "bin 3",
+            "count": 25
+          },
+          {
+            "label": "bin 4",
+            "count": 16
+          },
+          {
+            "label": "bin 5",
+            "count": 30
+          },
+          {
+            "label": "bin 6",
+            "count": 11
+          },
+          {
+            "label": "bin 7",
+            "count": 11
+          },
+          {
+            "label": "bin 8",
+            "count": 5
+          },
+          {
+            "label": "bin 9",
+            "count": 1
+          },
+          {
+            "label": "bin 10",
+            "count": 1
+          },
+          {
+            "label": "bin 11",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "field": "revenue_eur",
+        "declaredType": "double",
+        "observedType": "DOUBLE",
+        "missingPct": 0,
+        "distinct": 124,
+        "min": "4176.79",
+        "max": "11499.80",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 4
+          },
+          {
+            "label": "bin 1",
+            "count": 5
+          },
+          {
+            "label": "bin 2",
+            "count": 6
+          },
+          {
+            "label": "bin 3",
+            "count": 14
+          },
+          {
+            "label": "bin 4",
+            "count": 24
+          },
+          {
+            "label": "bin 5",
+            "count": 28
+          },
+          {
+            "label": "bin 6",
+            "count": 19
+          },
+          {
+            "label": "bin 7",
+            "count": 8
+          },
+          {
+            "label": "bin 8",
+            "count": 7
+          },
+          {
+            "label": "bin 9",
+            "count": 4
+          },
+          {
+            "label": "bin 10",
+            "count": 2
+          },
+          {
+            "label": "bin 11",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "field": "items",
+        "declaredType": "long",
+        "observedType": "BIGINT",
+        "missingPct": 0,
+        "distinct": 66,
+        "min": "82",
+        "max": "199",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 5
+          },
+          {
+            "label": "bin 1",
+            "count": 5
+          },
+          {
+            "label": "bin 2",
+            "count": 14
+          },
+          {
+            "label": "bin 3",
+            "count": 18
+          },
+          {
+            "label": "bin 4",
+            "count": 20
+          },
+          {
+            "label": "bin 5",
+            "count": 24
+          },
+          {
+            "label": "bin 6",
+            "count": 15
+          },
+          {
+            "label": "bin 7",
+            "count": 6
+          },
+          {
+            "label": "bin 8",
+            "count": 10
+          },
+          {
+            "label": "bin 9",
+            "count": 4
+          },
+          {
+            "label": "bin 10",
+            "count": 1
+          },
+          {
+            "label": "bin 11",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "health": 100,
+    "worst": "good",
+    "profiledAt": "2026-08-05T21:16:40.180Z"
+  },
+  "dim_customer_health": {
+    "urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,orrery.dim_customer_health,PROD)",
+    "rows": 1200,
+    "columns": [
+      {
+        "field": "customer_id",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 1200,
+        "min": "C00001",
+        "max": "C01200",
+        "issues": [],
+        "topk": [
+          {
+            "label": "C00001",
+            "count": 1
+          },
+          {
+            "label": "C00002",
+            "count": 1
+          },
+          {
+            "label": "C00003",
+            "count": 1
+          },
+          {
+            "label": "C00004",
+            "count": 1
+          },
+          {
+            "label": "C00005",
+            "count": 1
+          },
+          {
+            "label": "C00006",
+            "count": 1
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "segment",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 4,
+        "min": "consumer",
+        "max": "smb",
+        "issues": [],
+        "topk": [
+          {
+            "label": "consumer",
+            "count": 314
+          },
+          {
+            "label": "mid_market",
+            "count": 310
+          },
+          {
+            "label": "enterprise",
+            "count": 291
+          },
+          {
+            "label": "smb",
+            "count": 285
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "country",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 6,
+        "min": "DE",
+        "max": "PT",
+        "issues": [],
+        "topk": [
+          {
+            "label": "FR",
+            "count": 218
+          },
+          {
+            "label": "GR",
+            "count": 204
+          },
+          {
+            "label": "ES",
+            "count": 199
+          },
+          {
+            "label": "DE",
+            "count": 196
+          },
+          {
+            "label": "PT",
+            "count": 194
+          },
+          {
+            "label": "IT",
+            "count": 189
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      },
+      {
+        "field": "orders_30d",
+        "declaredType": "long",
+        "observedType": "BIGINT",
+        "missingPct": 0,
+        "distinct": 13,
+        "min": "0",
+        "max": "13",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 122
+          },
+          {
+            "label": "bin 1",
+            "count": 189
+          },
+          {
+            "label": "bin 2",
+            "count": 254
+          },
+          {
+            "label": "bin 3",
+            "count": 215
+          },
+          {
+            "label": "bin 4",
+            "count": 159
+          },
+          {
+            "label": "bin 5",
+            "count": 143
+          },
+          {
+            "label": "bin 6",
+            "count": 55
+          },
+          {
+            "label": "bin 7",
+            "count": 44
+          },
+          {
+            "label": "bin 8",
+            "count": 13
+          },
+          {
+            "label": "bin 9",
+            "count": 4
+          },
+          {
+            "label": "bin 10",
+            "count": 1
+          },
+          {
+            "label": "bin 11",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "field": "support_tickets_30d",
+        "declaredType": "long",
+        "observedType": "BIGINT",
+        "missingPct": 0,
+        "distinct": 10,
+        "min": "0",
+        "max": "9",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 509
+          },
+          {
+            "label": "bin 1",
+            "count": 108
+          },
+          {
+            "label": "bin 2",
+            "count": 320
+          },
+          {
+            "label": "bin 4",
+            "count": 80
+          },
+          {
+            "label": "bin 5",
+            "count": 113
+          },
+          {
+            "label": "bin 6",
+            "count": 32
+          },
+          {
+            "label": "bin 8",
+            "count": 29
+          },
+          {
+            "label": "bin 9",
+            "count": 7
+          },
+          {
+            "label": "bin 10",
+            "count": 1
+          },
+          {
+            "label": "bin 11",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "field": "reachable_by_email",
+        "declaredType": "boolean",
+        "observedType": "BOOLEAN",
+        "missingPct": 0,
+        "distinct": 2,
+        "min": "false",
+        "max": "true",
+        "issues": []
+      },
+      {
+        "field": "health_score",
+        "declaredType": "long",
+        "observedType": "BIGINT",
+        "missingPct": 0,
+        "distinct": 64,
+        "min": "0",
+        "max": "100",
+        "issues": [],
+        "histogram": [
+          {
+            "label": "bin 0",
+            "count": 40
+          },
+          {
+            "label": "bin 1",
+            "count": 20
+          },
+          {
+            "label": "bin 2",
+            "count": 43
+          },
+          {
+            "label": "bin 3",
+            "count": 57
+          },
+          {
+            "label": "bin 4",
+            "count": 86
+          },
+          {
+            "label": "bin 5",
+            "count": 97
+          },
+          {
+            "label": "bin 6",
+            "count": 142
+          },
+          {
+            "label": "bin 7",
+            "count": 149
+          },
+          {
+            "label": "bin 8",
+            "count": 165
+          },
+          {
+            "label": "bin 9",
+            "count": 154
+          },
+          {
+            "label": "bin 10",
+            "count": 96
+          },
+          {
+            "label": "bin 11",
+            "count": 151
+          }
+        ]
+      },
+      {
+        "field": "churn_risk_band",
+        "declaredType": "string",
+        "observedType": "VARCHAR",
+        "missingPct": 0,
+        "distinct": 3,
+        "min": "high",
+        "max": "medium",
+        "issues": [],
+        "topk": [
+          {
+            "label": "low",
+            "count": 664
+          },
+          {
+            "label": "medium",
+            "count": 393
+          },
+          {
+            "label": "high",
+            "count": 143
+          }
+        ],
+        "patternBreakdown": {
+          "isoTimestamp": 0,
+          "numeric": 0,
+          "empty": 0,
+          "other": 100
+        }
+      }
+    ],
+    "health": 100,
+    "worst": "good",
+    "profiledAt": "2026-08-05T21:16:40.342Z"
+  }
+}
