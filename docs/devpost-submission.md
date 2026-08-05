@@ -54,6 +54,14 @@ Target: ≤ 2:45. Record at 1080p+ with the app at http://localhost:3789 (or 300
 | 2:10–2:30 | Expand the `save_document` call preview; click **Write profile to DataHub** (live mode if you have quickstart running, else the dry-run). If live: cut to the DataHub UI showing the description + orrery-serious tag + rescue document on stg_customers. | "One click writes it all back through the official DataHub MCP server — a run-marked profile note, a severity tag, and the rescue proposal filed as a document on the asset. The next engineer, or the next agent, opens the catalog and inherits everything Orrery observed." |
 | 2:20–2:40 | Constellation view again; slow zoom out. | "Catalogs know what should be true. Profilers know what is. Orrery puts them on one canvas — and writes the difference back where it belongs. Orrery, built on DataHub, for the Agent Hackathon." |
 
+## Feedback survey answers (opt in on the Devpost form — real friction hit while building)
+
+1. **MCP server transport**: `mcp-server-datahub` is stdio-only. Embedding it in a web backend means spawning `uvx` as a child process per server — a Streamable HTTP transport option (or a documented way to run it as a sidecar service) would make DataHub-MCP usable from any web app or non-Python agent runtime directly.
+2. **Programmatic response shapes**: the MCP tools' JSON output shapes (`search` results, `get_lineage` relationships, `list_schema_fields`) are undocumented for programmatic consumers — building a typed client required defensive parsing against several possible shapes. A JSON-schema of each tool's result (not just its input) in the docs would remove the guesswork.
+3. **Quickstart port remapping is hard to discover**: `datahub docker quickstart` fails on machines where 8080/3306 are taken (very common on dev laptops — Airflow's default is 8080). The `DATAHUB_MAPPED_*_PORT` env vars solve it but are buried; the CLI should detect the conflict and suggest them (or take a `--port-offset` flag). Also, when a first quickstart attempt fails it exits with a generic "datahub is not running" — surfacing *which* container/port failed would save a lot of debugging.
+4. **Image pull weight**: the quickstart pulls ~18 GB of images before anything starts, with no progress indication by default and no "slim" profile. A minimal profile (GMS + frontend + one search backend, no actions/kafka for evaluation scenarios) would drop time-to-first-catalog dramatically for hackathons and evaluations.
+5. **`add_tags` rejects unknown tags silently from an agent's perspective**: mutation tools assume tags/terms already exist; a `create_if_missing` option (or a `create_tag` tool) would let write-back agents be self-contained.
+
 ## Judge test path (put in "How to test")
 
 1. `git clone https://github.com/zetabytelab/orrery && cd orrery && npm install && npm run dev` → http://localhost:3000 — works with zero configuration (bundled demo estate, write-back shown as dry-run).
