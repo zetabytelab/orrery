@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { ArrowRight, Radio, Send, Users, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { ArrowRight, ExternalLink, LifeBuoy, Radio, Send, Users, X } from "lucide-react";
 import type { DatasetProfile, EstateContext, Severity, WritebackCall } from "@/lib/types";
+import type { RescueCandidate } from "@/app/api/rescue/route";
 import { StatusIcon, STATUS_COLOR } from "./micro";
 
 type Props = {
@@ -16,7 +17,13 @@ type Props = {
 
 type SendState = { status: "idle" | "sending" | "done" | "error"; results?: Array<{ tool: string; ok: boolean; detail: string }>; mode?: string };
 
-export function buildWritebackPlan(urn: string, name: string, profile: DatasetProfile, downstreamNames: string[]): WritebackCall[] {
+export function buildWritebackPlan(
+  urn: string,
+  name: string,
+  profile: DatasetProfile,
+  downstreamNames: string[],
+  rescue?: { query: string; candidates: RescueCandidate[]; origin: string },
+): WritebackCall[] {
   const issueLines = profile.columns
     .flatMap((c) => c.issues.map((i) => `- \`${c.field}\`: ${i.message}`))
     .join("\n");
@@ -33,15 +40,47 @@ export function buildWritebackPlan(urn: string, name: string, profile: DatasetPr
   if (profile.worst !== "good") {
     calls.push({ tool: "add_tags", args: { urn, tags: [`urn:li:tag:orrery-${profile.worst}`] } });
   }
+  if (rescue && rescue.candidates.length > 0 && profile.worst !== "good") {
+    const lines = rescue.candidates
+      .map(
+        (c) =>
+          `- **${c.title}** (\`${c.ref}\`, ${c.source}${c.pricing ? `, ${c.pricing}` : ""}${c.license ? `, ${c.license}` : ""})${c.url ? ` — ${c.url}` : ""}`,
+      )
+      .join("\n");
+    calls.push({
+      tool: "save_document",
+      args: {
+        title: `Orrery rescue proposal — ${name} [${marker}]`,
+        content: `Candidate replacement/backfill datasets for \`${name}\`, ranked from the Mundaneum cross-catalog directory (query: "${rescue.query}", ${rescue.origin}):\n\n${lines}\n\nReview licenses and access terms before adoption; this is a proposal, not an approval.`,
+        related_asset_urn: urn,
+      },
+    });
+  }
   return calls;
 }
 
 export function ImpactPanel({ estate, profiles, selection, propagation, live, onClose }: Props) {
   const [send, setSend] = useState<SendState>({ status: "idle" });
+  const [rescue, setRescue] = useState<{ query: string; candidates: RescueCandidate[]; origin: string } | null>(null);
 
   const dataset = estate.datasets.find((d) => d.urn === selection.urn);
   const consumer = estate.consumers.find((c) => c.urn === selection.urn);
   const profile = dataset ? profiles[dataset.urn] : undefined;
+
+  useEffect(() => {
+    setRescue(null);
+    if (!dataset || !profile || profile.worst === "good") return;
+    let cancelled = false;
+    fetch(`/api/rescue?dataset=${encodeURIComponent(dataset.name)}`)
+      .then((r) => r.json())
+      .then((body) => {
+        if (!cancelled && Array.isArray(body.candidates) && body.candidates.length > 0) setRescue(body);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [dataset, profile]);
 
   const downstream = useMemo(() => {
     const ds = estate.datasets.filter((d) => d.urn !== selection.urn && propagation.has(d.urn));
@@ -58,11 +97,14 @@ export function ImpactPanel({ estate, profiles, selection, propagation, live, on
 
   const plan = useMemo(() => {
     if (!dataset || !profile) return [];
-    return buildWritebackPlan(dataset.urn, dataset.name, profile, [
-      ...downstream.datasets.map((d) => d.name),
-      ...downstream.consumers.map((c) => c.name),
-    ]);
-  }, [dataset, profile, downstream]);
+    return buildWritebackPlan(
+      dataset.urn,
+      dataset.name,
+      profile,
+      [...downstream.datasets.map((d) => d.name), ...downstream.consumers.map((c) => c.name)],
+      rescue ?? undefined,
+    );
+  }, [dataset, profile, downstream, rescue]);
 
   const focusedColumn = selection.field && profile ? profile.columns.find((c) => c.field === selection.field) : undefined;
 
@@ -170,6 +212,51 @@ export function ImpactPanel({ estate, profiles, selection, propagation, live, on
                 </span>
               ))}
             </div>
+          </section>
+        )}
+
+        {rescue && (
+          <section>
+            <h3 className="mb-1.5 flex items-center gap-1.5 text-[10px] font-semibold tracking-widest" style={{ color: "var(--ink-3)" }}>
+              <LifeBuoy size={11} /> RESCUE CANDIDATES — MUNDANEUM CROSS-CATALOG
+            </h3>
+            <ul className="space-y-1.5">
+              {rescue.candidates.slice(0, 3).map((c) => (
+                <li key={c.ref} className="rounded-lg p-2.5" style={{ background: "var(--surface-raised)" }}>
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate text-[11px] font-semibold">{c.title}</div>
+                      <div className="mt-0.5 flex flex-wrap items-center gap-1.5 text-[9px]" style={{ color: "var(--ink-3)" }}>
+                        <span
+                          className="rounded-[4px] px-1 py-[1px] font-semibold tracking-wider"
+                          style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--seq-250)" }}
+                        >
+                          {c.source.toUpperCase()}
+                        </span>
+                        {c.pricing && <span>{c.pricing}</span>}
+                        {c.license && <span>{c.license}</span>}
+                        {typeof c.quality === "number" && <span className="tabular">quality {c.quality}</span>}
+                      </div>
+                    </div>
+                    {c.url && (
+                      <a href={c.url} target="_blank" rel="noreferrer" className="rounded-md p-1 hover:bg-white/5" aria-label="open listing">
+                        <ExternalLink size={11} color="var(--ink-3)" />
+                      </a>
+                    )}
+                  </div>
+                  {c.summary && (
+                    <p className="mt-1 text-[9.5px] leading-snug" style={{ color: "var(--ink-2)" }}>
+                      {c.summary}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-1.5 text-[9.5px] leading-snug" style={{ color: "var(--ink-3)" }}>
+              {rescue.origin === "mundaneum-live"
+                ? "Ranked live by the local Mundaneum directory (40k+ datasets across Databricks, Snowflake, Kaggle, HF, Datarade…). The write-back below files these as a rescue proposal document in DataHub."
+                : "From a bundled Mundaneum directory snapshot (install mundaneum-pp-cli for live ranking). The write-back below files these as a rescue proposal document in DataHub."}
+            </p>
           </section>
         )}
 

@@ -13,7 +13,10 @@ Data catalogs know what *should* be true (schemas, lineage, ownership). Profiler
 - **DataHub supplies the context graph** — which datasets exist, their declared schemas, who owns them, and what is downstream of what.
 - **DuckDB-Wasm supplies the observed truth** — every dataset is profiled live, in-browser, no warehouse connection needed.
 - **The delta is the product** — a column declared `timestamp` in DataHub whose observed values are 9% epoch-millis integers is a *contract violation*, and because lineage is real, Orrery shows exactly which model and which executive dashboard that violation reaches, and which teams to notify.
-- **Findings flow back into DataHub** via MCP mutations (`update_description`, `add_tags`), closing the agent loop: read context → act → write knowledge back.
+- **Findings flow back into DataHub** via MCP mutations (`update_description`, `add_tags`, `save_document`), closing the agent loop: read context → act → write knowledge back.
+- **Broken dependencies get a lifeboat** — for datasets with serious incidents, Orrery ranks replacement/backfill candidates from the [Mundaneum](https://github.com/zetabytelab/datasetbib) cross-catalog directory (40k+ datasets across Databricks Marketplace, Snowflake Marketplace, Kaggle, Hugging Face, Datarade, data.gov…), and files them into DataHub as a rescue-proposal document tied to the damaged asset. Detect → blast radius → notify → **replace** — the full incident lifecycle, recorded in the catalog.
+
+![Rescue candidates](docs/rescue-view.png)
 
 ![Issue propagation](docs/propagation-view.png)
 

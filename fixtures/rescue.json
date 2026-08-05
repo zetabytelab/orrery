@@ -1,0 +1,110 @@
+{
+  "note": "Curated from live mundaneum-pp-cli queries on 2026-08-05. When the Mundaneum CLI is installed locally, /api/rescue queries its 40k+ cross-catalog directory live and these fixtures are not used.",
+  "byDataset": {
+    "stg_events": {
+      "query": "clickstream sessions user behavior log",
+      "candidates": [
+        {
+          "ref": "datarade:datastream-clickstream-browser-data-feed-datasys",
+          "title": "Clickstream Data — 500M+ Daily Events",
+          "source": "datarade",
+          "license": "Proprietary",
+          "pricing": "paid",
+          "quality": 65,
+          "url": "https://datarade.ai/data-products/datastream-clickstream-browser-data-feed-datasys",
+          "summary": "Commercial clickstream feed capturing real user interactions worldwide; candidate like-for-like replacement for the drifting telemetry producer."
+        },
+        {
+          "ref": "datarade:gsdsi-clickstream-data-global-billions-of-monthly-events-global-source-data-solutions",
+          "title": "Global Web Behavior & Clickstream — 200+ countries",
+          "source": "datarade",
+          "license": "Proprietary",
+          "pricing": "paid",
+          "quality": 65,
+          "url": "https://datarade.ai/data-products/gsdsi-clickstream-data-global-billions-of-monthly-events-global-source-data-solutions",
+          "summary": "Real-time browsing intelligence with 30+ quality and brand-safety signals; strong freshness SLO story."
+        },
+        {
+          "ref": "kaggle:abbas829/ecommerce-sales-dataset",
+          "title": "Ecommerce sales dataset",
+          "source": "kaggle",
+          "license": "CC BY-SA 4.0",
+          "pricing": "free",
+          "quality": 69,
+          "url": "https://www.kaggle.com/datasets/abbas829/ecommerce-sales-dataset",
+          "summary": "Free retail-transaction benchmark usable to validate event pipelines while the producer is repaired."
+        }
+      ]
+    },
+    "stg_customers": {
+      "query": "synthetic customer profiles crm demographics",
+      "candidates": [
+        {
+          "ref": "snowflake:GZSUZ8IO7H",
+          "title": "Consumer Demographics for Data Enhancement",
+          "source": "snowflake",
+          "license": "Marketplace terms",
+          "pricing": "contact",
+          "quality": 60,
+          "url": "https://app.snowflake.com/marketplace",
+          "summary": "Snowflake Marketplace demographic-enrichment listing; candidate to re-verify contactability after the consent-scrubber incident."
+        },
+        {
+          "ref": "databricks:eb50f6b7-4df6-47f1-b9d8-d00abad4d370",
+          "title": "Audience & Demographic Validation",
+          "source": "databricks",
+          "license": "Marketplace terms",
+          "pricing": "contact",
+          "quality": 60,
+          "url": "https://marketplace.databricks.com",
+          "summary": "Databricks Marketplace validation listing; can score which of the blanked emails are recoverable."
+        },
+        {
+          "ref": "kaggle:aslawant/credit-card-customer-demographics-dataset",
+          "title": "Credit Card Customer Demographics Dataset",
+          "source": "kaggle",
+          "license": "CC0",
+          "pricing": "free",
+          "quality": 69,
+          "url": "https://www.kaggle.com/datasets/aslawant/credit-card-customer-demographics-dataset",
+          "summary": "Free demographic benchmark for testing the repaired consent scrubber before re-enabling downstream sends."
+        }
+      ]
+    },
+    "raw_orders": {
+      "query": "online retail e-commerce transactions",
+      "candidates": [
+        {
+          "ref": "kaggle:mmumairkhattak/e-commerce-orders-dataset-2026-scra",
+          "title": "E-commerce Orders Dataset 2026",
+          "source": "kaggle",
+          "license": "MIT",
+          "pricing": "free",
+          "quality": 69,
+          "url": "https://www.kaggle.com/datasets/mmumairkhattak/e-commerce-orders-dataset-2026-scra",
+          "summary": "30,000 e-commerce orders for analytics and forecasting; benchmark substitute for the order feed."
+        },
+        {
+          "ref": "kaggle:hamza0027/global-retail-sales-dataset",
+          "title": "Global Retail Sales Dataset",
+          "source": "kaggle",
+          "license": "CC0",
+          "pricing": "free",
+          "quality": 69,
+          "url": "https://www.kaggle.com/datasets/hamza0027/global-retail-sales-dataset",
+          "summary": "Multi-country retail transactions with revenue and profit; public-domain licensed."
+        },
+        {
+          "ref": "kaggle:rahulkumar37841/e-commerce-customer-and-order-insights",
+          "title": "Retail Operations & Customer Transactions Dataset",
+          "source": "kaggle",
+          "license": "CC0",
+          "pricing": "free",
+          "quality": 69,
+          "url": "https://www.kaggle.com/datasets/rahulkumar37841/e-commerce-customer-and-order-insights",
+          "summary": "Relational customers + orders dataset mirroring this estate's raw layer shape."
+        }
+      ]
+    }
+  }
+}
