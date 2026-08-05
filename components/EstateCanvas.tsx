@@ -22,7 +22,7 @@ import { ConsumerNode, type ConsumerNodeData } from "./ConsumerNode";
 const nodeTypes = { dataset: DatasetNode, consumer: ConsumerNode };
 
 function ViewControls() {
-  const { fitView, zoomTo } = useReactFlow();
+  const { fitView } = useReactFlow();
   const buttonStyle = {
     background: "rgba(26,26,25,0.88)",
     border: "1px solid var(--border)",
@@ -32,10 +32,7 @@ function ViewControls() {
   return (
     <Panel position="bottom-left" className="flex gap-2">
       <button
-        onClick={() => {
-          zoomTo(0.3, { duration: 650 });
-          setTimeout(() => fitView({ padding: 0.35, duration: 650, maxZoom: 0.32 }), 40);
-        }}
+        onClick={() => fitView({ padding: 0.4, duration: 650, maxZoom: 0.3, minZoom: 0.2 })}
         className="flex items-center gap-1.5 rounded-xl px-3 py-2 text-[11px] font-semibold"
         style={buttonStyle}
       >
