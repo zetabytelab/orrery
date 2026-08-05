@@ -1,4 +1,9 @@
-# Orrery — a DataHub estate observatory
+<p align="center"><img src="docs/logo.png" alt="Orrery logo — an orrery of datasets, one burning red, its blast radius arcing toward the next asset" width="180"/></p>
+
+# Orrery — see the blast radius before it hits
+
+> An **orrery** is a clockwork model of the solar system — small enough to sit on a desk, true enough to predict an eclipse.
+> **This one is a clockwork model of your data estate — true enough to predict which dashboards go dark.**
 
 **An infinite canvas where every node of your DataHub lineage graph is a live data-profiling card.** Zoom out and your estate is a constellation colored by data health. Zoom in and each dataset becomes a full Trifacta-style profile — type inference, null bars, histograms, value frequencies — computed in your browser by DuckDB-Wasm. Click a broken column and watch the incident propagate downstream along **real DataHub lineage** to the ML models and dashboards it silently poisons. Then write the findings back to DataHub through the **official DataHub MCP server**, so the next person — or the next agent — inherits what Orrery observed.
 

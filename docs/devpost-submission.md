@@ -4,9 +4,19 @@
 
 **Orrery — the DataHub estate observatory**
 
+## Devpost project title
+
+**Orrery — see the blast radius before it hits**
+
 ## Elevator pitch (one-liner)
 
-An infinite canvas where every node of your DataHub lineage graph is a live data-profiling card — quality incidents propagate visually downstream to the models and dashboards they poison, and findings are written back to DataHub through the official MCP server.
+Every node of your DataHub lineage graph becomes a live data profile; broken columns light up the models and dashboards they'll poison, and a Mundaneum-powered lifeboat files the rescue back into DataHub.
+
+## The name (open the description with this)
+
+> An **orrery** is a clockwork model of the solar system — small enough to sit on a desk, true enough to predict an eclipse. This one is a clockwork model of your data estate — true enough to predict which dashboards go dark.
+
+Thumbnail: use `docs/logo.png` (the orrery glyph: the catalog at the center, one planet burning red, its blast radius already arcing to the next asset).
 
 ## Challenge category
 
@@ -46,7 +56,7 @@ Target: ≤ 2:45. Record at 1080p+ with the app at http://localhost:3789 (or 300
 
 | Time | Shot | Voiceover |
 |---|---|---|
-| 0:00–0:15 | Constellation view (click **Constellation**). Slow pan. | "This is a data estate the way an operator should see it: every star is a dataset in DataHub, and its color is the *observed* health of the actual data. Two of them are burning. This is Orrery." |
+| 0:00–0:15 | Constellation view (click **Constellation**). Slow pan. | "An orrery is a clockwork model of the solar system — true enough to predict an eclipse. This is an orrery of a data estate: every star is a dataset in DataHub, its color is the *observed* health of the actual data — and two of them are burning." |
 | 0:15–0:40 | Click **Fit estate**; fresh page reload so cards profile one by one. | "Orrery reads the lineage graph, schemas, and ownership from DataHub through its MCP server — and then profiles every dataset live, in the browser, with DuckDB-Wasm. Types, nulls, histograms, value frequencies. No warehouse connection, no profiling jobs." |
 | 0:40–1:10 | Zoom into `stg_events.event_ts` (red). Hover the row so the tooltip with the message shows. | "Here's why that matters. DataHub declares this column a *timestamp*. The data says 9% of its values are epoch integers — an upstream producer drifted. The catalog's contract and the data's reality disagree, and Orrery is the first place they meet." |
 | 1:10–1:50 | Click `stg_customers.email` (the 13% null spike). Propagation beams animate; impact panel opens. Point at blast radius + teams. | "Now the aha. This email column lost 13% of its values to a consent-scrubber bug. Click it — and the incident travels along *real* DataHub lineage: through the customer-health feature table, into the production churn model and the executive dashboard. Blast radius, affected owners, teams to notify — computed from the catalog, not from tribal knowledge." |
