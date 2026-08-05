@@ -119,7 +119,7 @@ function DatasetNodeInner({ data }: { data: DatasetNodeData }) {
       {constellation && (
         <div
           className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-1"
-          style={{ transform: `scale(${Math.min(2.4, 1.1 / Math.max(zoom, 0.18))})` }}
+          style={{ transform: `scale(${Math.min(7.5, 0.95 / Math.max(zoom, 0.1))})` }}
         >
           <div className="flex items-center gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full" style={{ background: STATUS_COLOR[worst], boxShadow: `0 0 10px ${STATUS_COLOR[worst]}` }} />
@@ -128,7 +128,10 @@ function DatasetNodeInner({ data }: { data: DatasetNodeData }) {
           {profile && worst !== "good" && (
             <span className="flex items-center gap-1 text-[9px]" style={{ color: STATUS_COLOR[worst] }}>
               <StatusIcon level={worst} size={10} />
-              {profile.columns.reduce((n, c) => n + c.issues.length, 0)} issues
+              {(() => {
+                const n = profile.columns.reduce((sum, c) => sum + c.issues.length, 0);
+                return `${n} issue${n === 1 ? "" : "s"}`;
+              })()}
             </span>
           )}
         </div>

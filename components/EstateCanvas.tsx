@@ -2,13 +2,55 @@
 
 import { useMemo } from "react";
 import dagre from "@dagrejs/dagre";
-import { Background, BackgroundVariant, MiniMap, ReactFlow, type Edge, type Node, MarkerType } from "@xyflow/react";
+import {
+  Background,
+  BackgroundVariant,
+  MiniMap,
+  Panel,
+  ReactFlow,
+  useReactFlow,
+  type Edge,
+  type Node,
+  MarkerType,
+} from "@xyflow/react";
+import { Maximize, Sparkles } from "lucide-react";
 import "@xyflow/react/dist/style.css";
 import type { DatasetProfile, EstateContext, Severity } from "@/lib/types";
 import { DatasetNode, type DatasetNodeData } from "./DatasetNode";
 import { ConsumerNode, type ConsumerNodeData } from "./ConsumerNode";
 
 const nodeTypes = { dataset: DatasetNode, consumer: ConsumerNode };
+
+function ViewControls() {
+  const { fitView, zoomTo } = useReactFlow();
+  const buttonStyle = {
+    background: "rgba(26,26,25,0.88)",
+    border: "1px solid var(--border)",
+    color: "var(--ink-2)",
+    backdropFilter: "blur(12px)",
+  } as const;
+  return (
+    <Panel position="bottom-left" className="flex gap-2">
+      <button
+        onClick={() => {
+          zoomTo(0.3, { duration: 650 });
+          setTimeout(() => fitView({ padding: 0.35, duration: 650, maxZoom: 0.32 }), 40);
+        }}
+        className="flex items-center gap-1.5 rounded-xl px-3 py-2 text-[11px] font-semibold"
+        style={buttonStyle}
+      >
+        <Sparkles size={12} color="var(--series)" /> Constellation
+      </button>
+      <button
+        onClick={() => fitView({ padding: 0.15, duration: 650 })}
+        className="flex items-center gap-1.5 rounded-xl px-3 py-2 text-[11px] font-semibold"
+        style={buttonStyle}
+      >
+        <Maximize size={12} color="var(--series)" /> Fit estate
+      </button>
+    </Panel>
+  );
+}
 
 type Props = {
   estate: EstateContext;
@@ -102,6 +144,7 @@ export function EstateCanvas({ estate, profiles, runningUrn, selection, propagat
       style={{ background: "transparent" }}
     >
       <Background variant={BackgroundVariant.Dots} gap={34} size={1} color="#2c2c2a" />
+      <ViewControls />
       <MiniMap
         pannable
         zoomable

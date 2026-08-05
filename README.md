@@ -17,6 +17,10 @@ Data catalogs know what *should* be true (schemas, lineage, ownership). Profiler
 
 ![Issue propagation](docs/propagation-view.png)
 
+Zoomed out, the same canvas becomes the constellation view — the whole estate at a glance, colored by observed health (use the **Constellation** / **Fit estate** buttons, or just scroll):
+
+![Constellation view](docs/constellation-view.png)
+
 ## Quick start (zero configuration)
 
 Requires Node.js ≥ 22.13.

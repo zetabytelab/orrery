@@ -51,7 +51,7 @@ function ConsumerNodeInner({ data }: { data: ConsumerNodeData }) {
       {constellation && (
         <div
           className="pointer-events-none absolute inset-0 flex items-center justify-center gap-1.5"
-          style={{ transform: `scale(${Math.min(2.4, 1.1 / Math.max(zoom, 0.18))})` }}
+          style={{ transform: `scale(${Math.min(7.5, 0.95 / Math.max(zoom, 0.1))})` }}
         >
           <span
             className="h-2.5 w-2.5 rounded-full"
