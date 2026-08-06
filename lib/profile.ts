@@ -1,7 +1,8 @@
 "use client";
 
 import type { AsyncDuckDB, AsyncDuckDBConnection } from "@duckdb/duckdb-wasm";
-import type { Bin, ColumnIssue, ColumnProfile, DatasetMeta, DatasetProfile, Severity } from "./types";
+import type { Bin, ColumnIssue, ColumnProfile, DatasetMeta, DatasetProfile, FinopsSignal, Severity } from "./types";
+import { FINOPS_SPECS } from "./finops";
 
 const ISO_TS = "^\\d{4}-\\d{2}-\\d{2}[T ]\\d{2}:\\d{2}";
 const NUMERIC = "^-?\\d+(\\.\\d+)?$";
@@ -114,7 +115,33 @@ export async function profileDataset(db: AsyncDuckDB, meta: DatasetMeta): Promis
       columns.push(withIssues(profile));
     }
 
-    return finalize(meta.urn, rows, columns);
+    const profile = finalize(meta.urn, rows, columns);
+
+    // Business value signals, measured from the data itself (never invented).
+    const spec = FINOPS_SPECS[meta.name];
+    if (spec) {
+      try {
+        const finops: FinopsSignal = { label: spec.label };
+        if (spec.kind === "daily_value") {
+          const r = await one(
+            conn,
+            `SELECT sum("${spec.valueColumn}") / nullif(count(DISTINCT "${spec.dateColumn}"), 0) AS v FROM "${meta.name}"`,
+          );
+          finops.eurPerDay = num(r.v);
+        } else {
+          const r = await one(
+            conn,
+            `SELECT count(*) AS v FROM "${meta.name}" WHERE "${spec.filterColumn}" = '${spec.filterValue}'`,
+          );
+          finops.population = num(r.v);
+        }
+        profile.finops = finops;
+      } catch {
+        // exposure signal is optional; profiling itself already succeeded
+      }
+    }
+
+    return profile;
   } finally {
     await conn.close();
   }

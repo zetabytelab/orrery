@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, ExternalLink, LifeBuoy, Radio, Send, Users, X } from "lucide-react";
+import { ArrowRight, Coins, ExternalLink, LifeBuoy, Radio, Send, Users, X } from "lucide-react";
 import type { DatasetProfile, EstateContext, Severity, WritebackCall } from "@/lib/types";
 import type { RescueCandidate } from "@/app/api/rescue/route";
+import { buildExposure, type ExposureLine } from "@/lib/finops";
 import { StatusIcon, STATUS_COLOR } from "./micro";
 
 type Props = {
@@ -25,17 +26,28 @@ export function buildWritebackPlan(
   profile: DatasetProfile,
   downstreamNames: string[],
   rescue?: { query: string; candidates: RescueCandidate[]; origin: string },
+  exposure?: { lines: ExposureLine[]; repairHours: number; repairEur: number; formula: string },
 ): WritebackCall[] {
   const issueLines = profile.columns
     .flatMap((c) => c.issues.map((i) => `- \`${c.field}\`: ${i.message}`))
     .join("\n");
   const marker = `orrery-profile ${profile.profiledAt.slice(0, 10)}`;
+  const exposureLines =
+    exposure && (exposure.lines.length > 0 || exposure.repairHours > 0) && profile.worst !== "good"
+      ? [
+          `\nEstimated business exposure:`,
+          ...exposure.lines.map((l) => `- ${l.asset} ${l.text}`),
+          `- Repair estimate: ~${exposure.repairHours}h ≈ €${Math.round(exposure.repairEur).toLocaleString()} (${exposure.formula})`,
+        ].join("\n")
+      : "";
+
   const summary = [
     `**Orrery data profile** \`[${marker}]\``,
     ``,
     `Health **${profile.health}/100** over ${profile.rows.toLocaleString()} rows, ${profile.columns.length} columns.`,
     issueLines ? `\nObserved issues:\n${issueLines}` : `\nNo issues observed.`,
     downstreamNames.length ? `\nDownstream blast radius: ${downstreamNames.join(", ")}.` : "",
+    exposureLines,
   ].join("\n");
 
   const calls: WritebackCall[] = [
@@ -119,6 +131,11 @@ export function ImpactPanel({ estate, profiles, selection, propagation, live, on
     return [...set];
   }, [downstream]);
 
+  const exposure = useMemo(() => {
+    if (!dataset || !profile || profile.worst === "good") return undefined;
+    return buildExposure(estate, profiles, propagation, dataset.urn);
+  }, [estate, profiles, propagation, dataset, profile]);
+
   const plan = useMemo(() => {
     if (!dataset || !profile) return [];
     return buildWritebackPlan(
@@ -127,8 +144,9 @@ export function ImpactPanel({ estate, profiles, selection, propagation, live, on
       profile,
       [...downstream.datasets.map((d) => d.name), ...downstream.consumers.map((c) => c.name)],
       rescue ?? undefined,
+      exposure,
     );
-  }, [dataset, profile, downstream, rescue]);
+  }, [dataset, profile, downstream, rescue, exposure]);
 
   const focusedColumn = selection.field && profile ? profile.columns.find((c) => c.field === selection.field) : undefined;
 
@@ -235,6 +253,27 @@ export function ImpactPanel({ estate, profiles, selection, propagation, live, on
                   {o}
                 </span>
               ))}
+            </div>
+          </section>
+        )}
+
+        {exposure && (exposure.lines.length > 0 || exposure.repairHours > 0) && (
+          <section>
+            <h3 className="mb-1.5 flex items-center gap-1.5 text-[10px] font-semibold tracking-widest" style={{ color: "var(--ink-3)" }}>
+              <Coins size={11} /> ESTIMATED BUSINESS EXPOSURE
+            </h3>
+            <div className="space-y-1.5">
+              {exposure.lines.map((l, k) => (
+                <div key={k} className="rounded-lg p-2.5 text-[11px] leading-snug" style={{ background: "var(--surface-raised)" }}>
+                  <span className="font-semibold">{l.asset}</span> {l.text}
+                </div>
+              ))}
+              <div className="rounded-lg p-2.5 text-[11px] leading-snug" style={{ background: "var(--surface-raised)" }}>
+                Repair estimate: <span className="tabular font-semibold">~{exposure.repairHours}h ≈ €{Math.round(exposure.repairEur).toLocaleString()}</span>
+                <div className="mt-1 text-[9.5px]" style={{ color: "var(--ink-3)" }}>
+                  Assumptions: {exposure.formula}. Caught at the {dataset?.layer} layer — before the 100× zone of the 1-10-100 data-quality cost rule.
+                </div>
+              </div>
             </div>
           </section>
         )}

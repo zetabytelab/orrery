@@ -61,6 +61,12 @@ export type ColumnProfile = {
   issues: ColumnIssue[];
 };
 
+export type FinopsSignal = {
+  label: string;
+  eurPerDay?: number;
+  population?: number;
+};
+
 export type DatasetProfile = {
   urn: string;
   rows: number;
@@ -68,6 +74,7 @@ export type DatasetProfile = {
   health: number;
   worst: Severity | "good";
   profiledAt: string;
+  finops?: FinopsSignal;
 };
 
 export type WritebackCall = {
