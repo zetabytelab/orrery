@@ -62,7 +62,9 @@ DATAHUB_GMS_URL=http://localhost:8080 uv run --with acryl-datahub python ingest_
 DATAHUB_GMS_URL=http://localhost:8080 DATAHUB_GMS_TOKEN=<token-if-auth-enabled> npm run dev
 ```
 
-The top bar flips to **LIVE · DATAHUB MCP**. Now the estate graph (entities, schemas, ownership, lineage) comes from MCP `search` + `list_schema_fields` + `get_lineage`, and the write-back button executes real `update_description` + `add_tags` mutations — the applied tags (`orrery-warning|serious|critical`) and profile notes are visible in the DataHub UI afterwards. Datasets whose names match the bundled CSVs are profiled with local data; anything else in your DataHub renders as metadata-only cards on the same canvas.
+The top bar flips to **LIVE · DATAHUB MCP** (verified end-to-end against DataHub quickstart v1.7.0 — `docs/live-writeback.png` shows a real run whose three MCP mutations all returned `success: true`):
+
+![Live write-back](docs/live-writeback.png) Now the estate graph (entities, schemas, ownership, lineage) comes from MCP `search` + `list_schema_fields` + `get_lineage`, and the write-back button executes real `update_description` + `add_tags` mutations — the applied tags (`orrery-warning|serious|critical`) and profile notes are visible in the DataHub UI afterwards. Datasets whose names match the bundled CSVs are profiled with local data; anything else in your DataHub renders as metadata-only cards on the same canvas.
 
 Environment variables:
 

@@ -22,6 +22,9 @@ async function connect(): Promise<Client> {
       ...(Object.fromEntries(Object.entries(process.env).filter(([, v]) => v !== undefined)) as Record<string, string>),
       DATAHUB_GMS_URL: process.env.DATAHUB_GMS_URL ?? "",
       DATAHUB_GMS_TOKEN: process.env.DATAHUB_GMS_TOKEN ?? "",
+      // Orrery's write-back uses the server's mutation tools (update_description,
+      // add_tags, save_document); the OSS server ships them disabled by default.
+      TOOLS_IS_MUTATION_ENABLED: "true",
     },
   });
   const client = new Client({ name: "orrery", version: "0.1.0" });
@@ -77,9 +80,19 @@ export async function fetchEstateFromDataHub(localCsvNames: Set<string>): Promis
     (get(search, ["searchResults"]) as unknown[]) ??
     (Array.isArray(search) ? (search as unknown[]) : []);
 
-  const entities = rawResults
+  let entities = rawResults
     .map((r) => (get(r, ["entity"]) ?? r) as AnyRecord)
     .filter((e) => str(e.urn).length > 0);
+
+  // Search results omit ownership/tags; hydrate every entity in one batch call.
+  try {
+    const detailed = (await callTool("get_entities", { urns: entities.map((e) => str(e.urn)) })) as unknown;
+    const detailedList = (Array.isArray(detailed) ? detailed : (get(detailed, ["entities"]) as unknown[]) ?? []) as AnyRecord[];
+    const byUrn = new Map(detailedList.map((e) => [str(e.urn), e]));
+    entities = entities.map((e) => byUrn.get(str(e.urn)) ?? e);
+  } catch {
+    // fall back to the thinner search results
+  }
 
   const datasets: EstateContext["datasets"] = [];
   const consumers: EstateContext["consumers"] = [];
@@ -91,7 +104,9 @@ export async function fetchEstateFromDataHub(localCsvNames: Set<string>): Promis
     const name = entityName(entity);
     const description = str(get(entity, ["properties", "description"]) ?? get(entity, ["description"]));
     const ownerRaw = get(entity, ["ownership", "owners"]) as unknown[] | undefined;
-    const owner = str(get(ownerRaw?.[0], ["owner", "urn"]), "unknown").split(":").at(-1) ?? "unknown";
+    const owner =
+      str(get(ownerRaw?.[0], ["owner", "name"])) ||
+      (str(get(ownerRaw?.[0], ["owner", "urn"]), "unknown").split(":").at(-1) ?? "unknown");
     const tagsRaw = (get(entity, ["tags", "tags"]) as unknown[] | undefined) ?? [];
     const tags = tagsRaw.map((t) => str(get(t, ["tag", "urn"])).split(":").at(-1) ?? "").filter(Boolean);
 
@@ -131,24 +146,48 @@ export async function fetchEstateFromDataHub(localCsvNames: Set<string>): Promis
       });
     }
 
+    if (urn.startsWith("urn:li:dataset:")) {
+      try {
+        const lineage = (await callTool("get_lineage", { urn, upstream: false, max_hops: 1, max_results: 30 })) as AnyRecord;
+        for (const rel of (get(lineage, ["downstreams", "searchResults"]) as unknown[]) ?? []) {
+          const downstream = str(get(rel, ["entity", "urn"]));
+          if (!downstream || !downstream.startsWith("urn:li:dataset:")) continue;
+          const key = `${urn}→${downstream}`;
+          if (!seenEdges.has(key)) {
+            seenEdges.add(key);
+            edges.push({ upstream: urn, downstream });
+          }
+        }
+      } catch {
+        // no lineage for this entity is fine
+      }
+    }
+  }
+
+  // Consumers (models, dashboards) may sit several hops from their source datasets
+  // (e.g. dataset -> training dataJob -> mlModel); trace their upstreams transitively
+  // and connect them to the nearest known datasets.
+  const datasetUrns = new Set(datasets.map((d) => d.urn));
+  for (const consumer of consumers) {
     try {
-      const lineage = (await callTool("get_lineage", { urn, direction: "downstream", max_hops: 1 })) as AnyRecord;
-      const rels =
-        (get(lineage, ["relationships"]) as unknown[]) ??
-        (get(lineage, ["results"]) as unknown[]) ??
-        (get(lineage, ["entities"]) as unknown[]) ??
-        [];
-      for (const rel of rels) {
-        const downstream = str(get(rel, ["entity", "urn"]) ?? get(rel, ["urn"]));
-        if (!downstream) continue;
-        const key = `${urn}→${downstream}`;
+      const lineage = (await callTool("get_lineage", { urn: consumer.urn, upstream: true, max_hops: 3, max_results: 30 })) as AnyRecord;
+      const hits: Array<{ urn: string; degree: number }> = [];
+      for (const rel of (get(lineage, ["upstreams", "searchResults"]) as unknown[]) ?? []) {
+        const upstream = str(get(rel, ["entity", "urn"]));
+        if (!datasetUrns.has(upstream)) continue;
+        const degreeRaw = get(rel, ["degree"]);
+        hits.push({ urn: upstream, degree: typeof degreeRaw === "number" ? degreeRaw : 99 });
+      }
+      const minDegree = Math.min(...hits.map((h) => h.degree));
+      for (const hit of hits.filter((h) => h.degree === minDegree)) {
+        const key = `${hit.urn}→${consumer.urn}`;
         if (!seenEdges.has(key)) {
           seenEdges.add(key);
-          edges.push({ upstream: urn, downstream });
+          edges.push({ upstream: hit.urn, downstream: consumer.urn });
         }
       }
     } catch {
-      // no lineage for this entity is fine
+      // consumer without lineage is fine
     }
   }
 

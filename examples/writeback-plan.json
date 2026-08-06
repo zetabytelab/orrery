@@ -4,18 +4,27 @@
     {
       "tool": "update_description",
       "args": {
-        "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
-        "description": "**Orrery data profile** `[orrery-profile 2026-08-05]`\n\nHealth **80/100** over 1,200 rows, 7 columns.\n\nObserved issues:\n- `email`: 13.3% of values are missing or empty.\n\nDownstream blast radius: dim_customer_health, churn_model, exec_revenue_dashboard."
+        "entity_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
+        "operation": "append",
+        "description": "\n\n---\n**Orrery data profile** `[orrery-profile 2026-08-05]`\n\nHealth **80/100** over 1,200 rows, 7 columns.\n\nObserved issues:\n- `email`: 13.3% of values are missing or empty.\n\nDownstream blast radius: dim_customer_health, orrery.churn_model, exec_revenue_dashboard."
       }
     },
     {
       "tool": "add_tags",
       "args": {
-        "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)",
-        "tags": [
-          "urn:li:tag:orrery-serious"
-        ]
+        "entity_urns": ["urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)"],
+        "tag_urns": ["urn:li:tag:orrery-serious"]
+      }
+    },
+    {
+      "tool": "save_document",
+      "args": {
+        "document_type": "Recommendation",
+        "title": "Orrery rescue proposal — stg_customers [orrery-profile 2026-08-05]",
+        "content": "Candidate replacement/backfill datasets for `stg_customers`, ranked from the Mundaneum cross-catalog directory (query: \"synthetic customer profiles crm demographics\", mundaneum-live):\n\n- **Credit Card Customer Demographics Dataset** (`kaggle:aslawant/credit-card-customer-demographics-dataset`, kaggle, free, CC0) — https://www.kaggle.com/datasets/aslawant/credit-card-customer-demographics-dataset\n- **Consumer Demographics for Data Enhancement** (`snowflake:GZSUZ8IO7H`, snowflake, contact) — https://app.snowflake.com/marketplace\n\nReview licenses and access terms before adoption; this is a proposal, not an approval.",
+        "related_assets": ["urn:li:dataset:(urn:li:dataPlatform:dbt,orrery.stg_customers,PROD)"]
       }
     }
-  ]
+  ],
+  "verified": "executed live 2026-08-06 against DataHub quickstart v1.7.0 via mcp-server-datahub; all three calls returned success:true"
 }

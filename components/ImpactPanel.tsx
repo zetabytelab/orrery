@@ -36,9 +36,11 @@ export function buildWritebackPlan(
     downstreamNames.length ? `\nDownstream blast radius: ${downstreamNames.join(", ")}.` : "",
   ].join("\n");
 
-  const calls: WritebackCall[] = [{ tool: "update_description", args: { urn, description: summary } }];
+  const calls: WritebackCall[] = [
+    { tool: "update_description", args: { entity_urn: urn, operation: "append", description: `\n\n---\n${summary}` } },
+  ];
   if (profile.worst !== "good") {
-    calls.push({ tool: "add_tags", args: { urn, tags: [`urn:li:tag:orrery-${profile.worst}`] } });
+    calls.push({ tool: "add_tags", args: { entity_urns: [urn], tag_urns: [`urn:li:tag:orrery-${profile.worst}`] } });
   }
   if (rescue && rescue.candidates.length > 0 && profile.worst !== "good") {
     const lines = rescue.candidates
@@ -50,9 +52,10 @@ export function buildWritebackPlan(
     calls.push({
       tool: "save_document",
       args: {
+        document_type: "Recommendation",
         title: `Orrery rescue proposal — ${name} [${marker}]`,
         content: `Candidate replacement/backfill datasets for \`${name}\`, ranked from the Mundaneum cross-catalog directory (query: "${rescue.query}", ${rescue.origin}):\n\n${lines}\n\nReview licenses and access terms before adoption; this is a proposal, not an approval.`,
-        related_asset_urn: urn,
+        related_assets: [urn],
       },
     });
   }

@@ -16,7 +16,7 @@ import os
 import pathlib
 import sys
 
-from datahub.emitter.mce_builder import make_group_urn, make_tag_urn
+from datahub.emitter.mce_builder import make_data_flow_urn, make_data_job_urn, make_group_urn, make_tag_urn
 from datahub.emitter.mcp import MetadataChangeProposalWrapper
 from datahub.emitter.rest_emitter import DatahubRestEmitter
 from datahub.metadata.schema_classes import (
@@ -24,6 +24,9 @@ from datahub.metadata.schema_classes import (
     BooleanTypeClass,
     ChangeAuditStampsClass,
     DashboardInfoClass,
+    DataFlowInfoClass,
+    DataJobInfoClass,
+    DataJobInputOutputClass,
     DatasetLineageTypeClass,
     DatasetPropertiesClass,
     EdgeClass,
@@ -133,18 +136,20 @@ def main() -> None:
                 ),
             )
         else:
+            # Dataset -> training job -> model, so the model has real upstream lineage.
+            flow_urn = make_data_flow_urn("airflow", "orrery_training", "PROD")
+            job_urn = make_data_job_urn("airflow", "orrery_training", f"train_{consumer['name']}", "PROD")
+            emit(flow_urn, DataFlowInfoClass(name="orrery_training", description="Weekly model training pipeline."))
+            emit(job_urn, DataJobInfoClass(name=f"train_{consumer['name']}", type="SPARK", description=f"Trains {consumer['name']} from its feature tables."))
+            emit(job_urn, DataJobInputOutputClass(inputDatasets=inputs, outputDatasets=[]))
             emit(
                 urn,
                 MLModelPropertiesClass(
                     name=consumer["name"],
                     description=consumer["description"],
-                    mlFeatures=None,
-                    trainingJobs=None,
+                    trainingJobs=[job_urn],
                 ),
             )
-            # Dataset -> model training lineage, best-effort: newer servers accept
-            # upstream lineage semantics for ML via the mlModelProperties downstreams;
-            # older ones simply skip it. The canvas reads whatever get_lineage returns.
         emit(urn, owned_by(consumer["owner"]))
         emit(urn, tagged(consumer["tags"]))
 
