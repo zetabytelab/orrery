@@ -70,7 +70,13 @@ And this is what the next person opening DataHub inherits — the profile note a
 
 ![DataHub asset after write-back](docs/datahub-asset-writeback.png)
 
-![Rescue proposal document in DataHub](docs/datahub-rescue-document.png) Now the estate graph (entities, schemas, ownership, lineage) comes from MCP `search` + `list_schema_fields` + `get_lineage`, and the write-back button executes real `update_description` + `add_tags` mutations — the applied tags (`orrery-warning|serious|critical`) and profile notes are visible in the DataHub UI afterwards. Datasets whose names match the bundled CSVs are profiled with local data; anything else in your DataHub renders as metadata-only cards on the same canvas.
+![Rescue proposal document in DataHub](docs/datahub-rescue-document.png)
+
+Write-back goes down to the **column level** — the drifting `event_ts` field carries its `orrery-critical` tag and an observed-profile note directly in DataHub's schema table, and the whole estate (grouped under a Commerce Analytics domain) renders in DataHub's own lineage explorer, ML model included:
+
+![Column-level tags in DataHub](docs/datahub-column-tags.png)
+
+![End-to-end ML lineage in DataHub](docs/datahub-ml-lineage.png) Now the estate graph (entities, schemas, ownership, lineage) comes from MCP `search` + `list_schema_fields` + `get_lineage`, and the write-back button executes real `update_description` + `add_tags` mutations — the applied tags (`orrery-warning|serious|critical`) and profile notes are visible in the DataHub UI afterwards. Datasets whose names match the bundled CSVs are profiled with local data; anything else in your DataHub renders as metadata-only cards on the same canvas.
 
 Environment variables:
 

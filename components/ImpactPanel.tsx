@@ -17,6 +17,8 @@ type Props = {
 
 type SendState = { status: "idle" | "sending" | "done" | "error"; results?: Array<{ tool: string; ok: boolean; detail: string }>; mode?: string };
 
+const SEVERITY_ORDER: Severity[] = ["warning", "serious", "critical"];
+
 export function buildWritebackPlan(
   urn: string,
   name: string,
@@ -41,6 +43,25 @@ export function buildWritebackPlan(
   ];
   if (profile.worst !== "good") {
     calls.push({ tool: "add_tags", args: { entity_urns: [urn], tag_urns: [`urn:li:tag:orrery-${profile.worst}`] } });
+  }
+  // Column-level findings land on the exact schema field, so DataHub's own
+  // schema and lineage views surface them where an analyst actually looks.
+  for (const col of profile.columns) {
+    if (col.issues.length === 0) continue;
+    const colWorst = col.issues.reduce<Severity>((acc, i) => (SEVERITY_ORDER.indexOf(i.severity) > SEVERITY_ORDER.indexOf(acc) ? i.severity : acc), "warning");
+    calls.push({
+      tool: "add_tags",
+      args: { entity_urns: [urn], tag_urns: [`urn:li:tag:orrery-${colWorst}`], column_paths: [col.field] },
+    });
+    calls.push({
+      tool: "update_description",
+      args: {
+        entity_urn: urn,
+        operation: "append",
+        column_path: col.field,
+        description: `\n\n— Orrery \`[${marker}]\`: ${col.issues.map((i) => i.message).join(" ")} Observed ${col.observedType}, ${col.missingPct.toFixed(1)}% missing, ${col.distinct.toLocaleString()} distinct.`,
+      },
+    });
   }
   if (rescue && rescue.candidates.length > 0 && profile.worst !== "good") {
     const lines = rescue.candidates

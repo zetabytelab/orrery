@@ -27,6 +27,8 @@ from datahub.metadata.schema_classes import (
     DataFlowInfoClass,
     DataJobInfoClass,
     DataJobInputOutputClass,
+    DomainPropertiesClass,
+    DomainsClass,
     DatasetLineageTypeClass,
     DatasetPropertiesClass,
     EdgeClass,
@@ -85,11 +87,17 @@ def main() -> None:
     for level in ("warning", "serious", "critical"):
         emit(make_tag_urn(f"orrery-{level}"), TagPropertiesClass(name=f"orrery-{level}", description=f"Orrery observed a {level}-grade data-quality incident on this asset."))
 
+    # One domain groups the whole estate in DataHub's own navigation and lineage views.
+    domain_urn = "urn:li:domain:orrery-commerce-analytics"
+    emit(domain_urn, DomainPropertiesClass(name="Commerce Analytics", description="Orrery demo estate: commerce raw feeds, staging, marts, and their downstream model and dashboard."))
+    in_domain = DomainsClass(domains=[domain_urn])
+
     for ds in ESTATE["datasets"]:
         urn = ds["urn"]
         emit(urn, DatasetPropertiesClass(name=ds["name"], description=ds["description"]))
         emit(urn, owned_by(ds["owner"]))
         emit(urn, tagged(ds["tags"]))
+        emit(urn, in_domain)
         emit(
             urn,
             SchemaMetadataClass(
@@ -152,6 +160,7 @@ def main() -> None:
             )
         emit(urn, owned_by(consumer["owner"]))
         emit(urn, tagged(consumer["tags"]))
+        emit(urn, in_domain)
 
     print(f"Emitted {emitted} aspects for {len(ESTATE['datasets'])} datasets and {len(ESTATE['consumers'])} consumers to {gms}.")
 
