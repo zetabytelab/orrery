@@ -64,7 +64,13 @@ DATAHUB_GMS_URL=http://localhost:8080 DATAHUB_GMS_TOKEN=<token-if-auth-enabled> 
 
 The top bar flips to **LIVE · DATAHUB MCP** (verified end-to-end against DataHub quickstart v1.7.0 — `docs/live-writeback.png` shows a real run whose three MCP mutations all returned `success: true`):
 
-![Live write-back](docs/live-writeback.png) Now the estate graph (entities, schemas, ownership, lineage) comes from MCP `search` + `list_schema_fields` + `get_lineage`, and the write-back button executes real `update_description` + `add_tags` mutations — the applied tags (`orrery-warning|serious|critical`) and profile notes are visible in the DataHub UI afterwards. Datasets whose names match the bundled CSVs are profiled with local data; anything else in your DataHub renders as metadata-only cards on the same canvas.
+![Live write-back](docs/live-writeback.png)
+
+And this is what the next person opening DataHub inherits — the profile note and severity tag on the asset, and the rescue proposal filed as a first-class DataHub Document related to it:
+
+![DataHub asset after write-back](docs/datahub-asset-writeback.png)
+
+![Rescue proposal document in DataHub](docs/datahub-rescue-document.png) Now the estate graph (entities, schemas, ownership, lineage) comes from MCP `search` + `list_schema_fields` + `get_lineage`, and the write-back button executes real `update_description` + `add_tags` mutations — the applied tags (`orrery-warning|serious|critical`) and profile notes are visible in the DataHub UI afterwards. Datasets whose names match the bundled CSVs are profiled with local data; anything else in your DataHub renders as metadata-only cards on the same canvas.
 
 Environment variables:
 
