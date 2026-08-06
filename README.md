@@ -119,7 +119,7 @@ Nothing in the pipeline is demo-specific. The canvas renders whatever `/api/cont
 ```
 app/               Next.js app — canvas page + /api/context + /api/writeback
 components/        EstateCanvas, DatasetNode, ConsumerNode, ImpactPanel, micro-charts
-lib/               profiling engine, DuckDB bootstrap, DataHub MCP client, types
+lib/               profiling engine, DuckDB bootstrap, DataHub MCP client, FinOps exposure model, types
 fixtures/          estate.json — the DataHub-shaped demo context
 data/              deterministic synthetic-estate generator (writes public/estate)
 ingest/            ingest_estate.py — load the demo estate into a real DataHub
