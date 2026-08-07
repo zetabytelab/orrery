@@ -23,7 +23,7 @@ Data catalogs know what *should* be true (schemas, lineage, ownership). Profiler
 
 ![Business exposure](docs/finops-exposure.png)
 
-- **Broken dependencies get a lifeboat** — for datasets with serious incidents, Orrery ranks replacement/backfill candidates from a 40k+ dataset cross-catalog directory (Databricks Marketplace, Snowflake Marketplace, Kaggle, Hugging Face, Datarade, data.gov…) powered by Mundaneum — our companion open-source dataset-discovery engine, currently in development. Judges need nothing extra: the demo ships a bundled snapshot of real directory results, and Orrery files them into DataHub as a rescue-proposal document tied to the damaged asset. Detect → blast radius → notify → **replace** — the full incident lifecycle, recorded in the catalog.
+- **Broken dependencies get a lifeboat** — for datasets with serious incidents, Orrery ranks replacement/backfill candidates from a 40k+ dataset cross-catalog directory (Databricks Marketplace, Snowflake Marketplace, Kaggle, Hugging Face, Datarade, data.gov…) powered by Mundaneum — an external open-source data-aggregator project (by the same author, in development) that indexes and ranks datasets across public and commercial catalogs with license, pricing, and quality metadata. Judges need nothing extra: the demo ships a bundled snapshot of real directory results, and Orrery files them into DataHub as a rescue-proposal document tied to the damaged asset. Detect → blast radius → notify → **replace** — the full incident lifecycle, recorded in the catalog.
 
 ![Rescue candidates](docs/rescue-view.png)
 
@@ -129,6 +129,6 @@ docs/              screenshots
 
 ## Provenance & license
 
-All application code in this repository was written during the hackathon submission period. Pre-existing tools used as dependencies: Next.js, React Flow (@xyflow/react), DuckDB-Wasm, dagre, lucide icons, the MCP TypeScript SDK, and the DataHub MCP server + acryl-datahub SDK. The demo estate is synthetic and deterministic; no real customer data is used or contacted.
+All application code in this repository was written during the hackathon submission period. Pre-existing tools used as dependencies: Next.js, React Flow (@xyflow/react), DuckDB-Wasm, dagre, lucide icons, the MCP TypeScript SDK, and the DataHub MCP server + acryl-datahub SDK. The rescue feature queries Mundaneum, an external open-source data-aggregator project by the same author (in development, not yet published); the repo bundles a snapshot of real Mundaneum results so the feature is fully testable without it. The demo estate is synthetic and deterministic; no real customer data is used or contacted.
 
 Licensed under the [Apache License 2.0](LICENSE).
