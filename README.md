@@ -9,6 +9,8 @@
 
 Built for **Build with DataHub: The Agent Hackathon** (Open/Wildcard, with a foot in Production ML Agents).
 
+**▶ Live demo (zero install): https://orrery-zeta-flow.vercel.app** · **▶ 3-min video: https://youtu.be/z7agJOrHa9I**
+
 ![Orrery estate view](docs/estate-view.png)
 
 ## Why this exists

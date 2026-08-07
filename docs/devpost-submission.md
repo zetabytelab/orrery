@@ -51,6 +51,8 @@ datahub · mcp · duckdb-wasm · next.js · react-flow · typescript · python �
 
 ## URLs
 
+- Live demo (fixture mode, zero install): https://orrery-zeta-flow.vercel.app
+- Video: https://youtu.be/z7agJOrHa9I
 - Repository (public, Apache 2.0): https://github.com/zetabytelab/orrery
 - Try it: clone → `npm install && npm run dev` → http://localhost:3000 (zero config)
 

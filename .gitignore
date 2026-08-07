@@ -19,3 +19,4 @@ npm-debug.log*
 /ingest/.venv/
 __pycache__/
 tsconfig.tsbuildinfo
+.vercel
