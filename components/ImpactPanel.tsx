@@ -317,8 +317,8 @@ export function ImpactPanel({ estate, profiles, selection, propagation, live, on
             </ul>
             <p className="mt-1.5 text-[9.5px] leading-snug" style={{ color: "var(--ink-3)" }}>
               {rescue.origin === "mundaneum-live"
-                ? "Ranked live by the local Mundaneum directory (40k+ datasets across Databricks, Snowflake, Kaggle, HF, Datarade…). The write-back below files these as a rescue proposal document in DataHub."
-                : "From a bundled Mundaneum directory snapshot (install mundaneum-pp-cli for live ranking). The write-back below files these as a rescue proposal document in DataHub."}
+                ? "Ranked live by Mundaneum — our companion open-source dataset-discovery engine (40k+ datasets across Databricks, Snowflake, Kaggle, HF, Datarade…). The write-back below files these as a rescue proposal document in DataHub."
+                : "A bundled snapshot of real results from Mundaneum — our companion open-source dataset-discovery engine, in development. The write-back below files these as a rescue proposal document in DataHub."}
             </p>
           </section>
         )}

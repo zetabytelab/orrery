@@ -10,7 +10,7 @@
 
 ## Elevator pitch (one-liner)
 
-Every node of your DataHub lineage graph becomes a live data profile; broken columns light up the models and dashboards they'll poison, and a Mundaneum-powered lifeboat files the rescue back into DataHub.
+Every node of your DataHub lineage graph becomes a live data profile; broken columns light up the models and dashboards they'll poison, and the rescue is filed right back into DataHub.
 
 ## The name (open the description with this)
 
@@ -33,7 +33,7 @@ Open / Wildcard (with strong overlap into Production ML Agents — the demo's cl
 - **The delta is the product** — Orrery checks the *observed* data against the schema DataHub *declares*. A column declared `timestamp` whose values are 9% epoch-millis integers becomes a critical contract violation.
 - **Click the broken column** — the incident propagates as animated beams along real DataHub lineage edges, dimming everything unaffected, straight to the ML model and executive dashboard it reaches. The impact panel lists the blast radius, the owners of every affected asset, and the teams to notify.
 - **Write it back** — one click sends the findings through the official DataHub MCP server: a run-marked profile note with the exposure figures (`update_description`), severity tags down to the **exact schema field** (`add_tags` with `column_paths`), and a per-column observed-profile note — so the finding lives in the catalog, on the asset *and* on the column, where the next person or agent inherits it.
-- **And launch a lifeboat** — for seriously damaged datasets, Orrery ranks replacement/backfill candidates from the Mundaneum cross-catalog directory (40k+ datasets spanning the Databricks and Snowflake marketplaces, Kaggle, Hugging Face, Datarade, data.gov and more — license, pricing, and quality included) and files them into DataHub as a `save_document` rescue proposal attached to the broken asset. The incident lifecycle completes: detect → blast radius → notify → replace — all recorded in the catalog.
+- **And launch a lifeboat** — for seriously damaged datasets, Orrery ranks replacement/backfill candidates from a 40k+ dataset cross-catalog directory spanning the Databricks and Snowflake marketplaces, Kaggle, Hugging Face, Datarade, data.gov and more — license, pricing, and quality included (powered by Mundaneum, our companion open-source dataset-discovery engine, in development; the demo bundles a snapshot of real results so nothing extra is needed to test) — and files them into DataHub as a `save_document` rescue proposal attached to the broken asset. The incident lifecycle completes: detect → blast radius → notify → replace — all recorded in the catalog.
 
 **Every finding is evidence-bound.** No unexplained AI score anywhere: each issue is a named column, a measured percentage, and a declared-vs-observed contract check you can verify against DataHub and against the data itself. In the demo estate, two staging-layer incidents silently reach **100% of the decision layer** — one production churn model and one executive dashboard — and Orrery shows the exact path. Lineage tells you where data came from; metadata tells you who owns it; **Orrery checks whether the data is telling the truth — and files the rescue.**
 

@@ -23,7 +23,7 @@ Data catalogs know what *should* be true (schemas, lineage, ownership). Profiler
 
 ![Business exposure](docs/finops-exposure.png)
 
-- **Broken dependencies get a lifeboat** — for datasets with serious incidents, Orrery ranks replacement/backfill candidates from the [Mundaneum](https://github.com/zetabytelab/datasetbib) cross-catalog directory (40k+ datasets across Databricks Marketplace, Snowflake Marketplace, Kaggle, Hugging Face, Datarade, data.gov…), and files them into DataHub as a rescue-proposal document tied to the damaged asset. Detect → blast radius → notify → **replace** — the full incident lifecycle, recorded in the catalog.
+- **Broken dependencies get a lifeboat** — for datasets with serious incidents, Orrery ranks replacement/backfill candidates from a 40k+ dataset cross-catalog directory (Databricks Marketplace, Snowflake Marketplace, Kaggle, Hugging Face, Datarade, data.gov…) powered by Mundaneum — our companion open-source dataset-discovery engine, currently in development. Judges need nothing extra: the demo ships a bundled snapshot of real directory results, and Orrery files them into DataHub as a rescue-proposal document tied to the damaged asset. Detect → blast radius → notify → **replace** — the full incident lifecycle, recorded in the catalog.
 
 ![Rescue candidates](docs/rescue-view.png)
 
