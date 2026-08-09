@@ -72,7 +72,9 @@ The top bar flips to **LIVE · DATAHUB MCP** (verified end-to-end against DataHu
 
 ![Live write-back](docs/live-writeback.png)
 
-And this is what the next person opening DataHub inherits — the profile note and severity tag on the asset, and the rescue proposal filed as a first-class DataHub Document related to it:
+And this is what the next person opening DataHub inherits — the profile note **with the measured business exposure (€30,034/day, 143 at-risk customers, ~€935 repair)**, the severity tag on the asset, and the rescue proposal filed as a first-class DataHub Document related to it:
+
+![FinOps exposure recorded in DataHub](docs/datahub-finops-money.png)
 
 ![DataHub asset after write-back](docs/datahub-asset-writeback.png)
 
