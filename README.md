@@ -11,6 +11,8 @@ Built for **Build with DataHub: The Agent Hackathon** (Open/Wildcard, with a foo
 
 **▶ Live demo (zero install): https://orrery-zeta-flow.vercel.app** · **▶ 3-min video: https://youtu.be/z7agJOrHa9I**
 
+![Orrery — one broken column, priced: €30,034/day at risk, 143 customers exposed, €935 to fix — powered by DataHub](docs/orrery-card.png)
+
 ![Orrery estate view](docs/estate-view.png)
 
 ## Why this exists
