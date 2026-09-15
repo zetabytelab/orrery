@@ -9,7 +9,9 @@
 
 Built for **Build with DataHub: The Agent Hackathon** (Open/Wildcard, with a foot in Production ML Agents).
 
-**▶ Live demo (zero install): https://orrery-zeta-flow.vercel.app** · **▶ 3-min video: https://youtu.be/z7agJOrHa9I**
+**▶ 3-min video: https://youtu.be/z7agJOrHa9I** · **▶ Run it locally in two commands: [Quick start](#quick-start-zero-configuration)**
+
+> The hosted Vercel demo was retired on 2026-09-15 after the hackathon. The app runs locally with zero configuration.
 
 ![Orrery — one broken column, priced: €30,034/day at risk, 143 customers exposed, €935 to fix — powered by DataHub](docs/orrery-card.png)
 
